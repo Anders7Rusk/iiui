@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>iiui — дизайн-система iiko</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230A0A0B'/><rect x='9' y='8' width='5' height='16' rx='1' fill='%23FF5252'/><rect x='18' y='8' width='5' height='16' rx='1' fill='%23FFFFFF'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0A0B; --panel:#0F0F12; --panel2:#131317;
+  --red:#FF5252; --red-soft:rgba(255,82,82,.09); --red-line:rgba(255,82,82,.5);
+  --text:#FFFFFF; --body:#E9E9EC; --muted:#A6A6AD; --faint:#6E6E76;
+  --hair:rgba(255,255,255,.09); --hair2:rgba(255,255,255,.16);
+  --mono:ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font-family:'Roboto',system-ui,'Segoe UI',Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+::selection{background:var(--red);color:#0A0A0B}
+.app{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg)}
+.stage{position:relative;width:1920px;height:1080px;flex:none;background:var(--bg);transform-origin:center center;overflow:hidden}
+
+.slide{position:absolute;inset:0;padding:96px 120px 170px;display:flex;flex-direction:column;opacity:0;visibility:hidden;overflow:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
+.slide.active{opacity:1;visibility:visible;transition:opacity .45s ease,visibility 0s}
+
+.anim{opacity:0}
+.slide.active .anim{animation:rise .55s cubic-bezier(.22,.61,.36,1) both;animation-delay:var(--d,0s)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+.kicker{display:flex;align-items:center;gap:18px;font-size:22px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8E8E96;margin-bottom:26px}
+.sq{display:block;width:12px;height:12px;background:var(--red);flex:none}
+h2{font-size:64px;font-weight:700;letter-spacing:-.01em;line-height:1.08;margin-bottom:52px}
+.ic{width:30px;height:30px;stroke:#6E6E76;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none}
+section[data-screen="titul"]{background-image:radial-gradient(920px 920px at calc(100% + 240px) -240px,rgba(255,82,82,.17),rgba(255,82,82,0) 62%)}
+
+/* ===== 01 title ===== */
+.t-brand{position:absolute;top:96px;left:120px;font-size:20px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.t-date{position:absolute;top:96px;right:120px;font-size:20px;letter-spacing:.08em;color:var(--faint)}
+.t-inner{height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:36px}
+.t-mark{font-size:298px;font-weight:900;letter-spacing:-.045em;line-height:.8;display:flex}
+.t-mark .ii{color:var(--red)}
+.t-mark .ui{color:#fff}
+.t-rule{width:220px;height:6px;background:var(--red);margin:58px 0 46px}
+.t-title{font-size:52px;font-weight:500;margin-bottom:16px}
+.t-sub{font-size:30px;font-weight:400;color:var(--muted)}
+
+/* ===== rows list ===== */
+.rows{margin-top:2px}
+.rows .row{display:flex;gap:26px;align-items:flex-start;padding:29px 0;border-bottom:1px solid var(--hair)}
+.rows .row:last-child{border-bottom:0}
+.rows .row p{font-size:32px;line-height:1.32;color:var(--body)}
+.rows .row .sq{margin-top:12px}
+.rows .row .ic{margin-left:auto;align-self:center}
+.mini-rows .row{padding:19px 0}
+.mini-rows .row p{font-size:26px}
+
+/* ===== 03 constructor ===== */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px 72px;margin-bottom:56px}
+.bullet{display:flex;gap:22px;align-items:flex-start}
+.bullet p{font-size:28px;line-height:1.36;color:var(--body)}
+.bullet .sq{margin-top:11px}
+.mocks{display:flex;gap:30px;align-items:center;padding:36px 44px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
+.m-btnfill{height:56px;padding:0 30px;display:flex;align-items:center;background:var(--red);color:#0A0A0B;border-radius:10px;font-size:22px;font-weight:500;flex:none}
+.m-btnout{height:56px;padding:0 30px;display:flex;align-items:center;border:1.5px solid rgba(255,255,255,.35);border-radius:10px;font-size:22px;font-weight:500;color:#fff;flex:none}
+.m-input{width:230px;border:1.5px solid rgba(255,255,255,.22);border-radius:10px;padding:9px 16px;background:var(--panel2);flex:none}
+.m-input .l{font-size:15px;color:var(--faint);margin-bottom:2px}
+.m-input .v{font-size:20px;color:var(--body)}
+.m-check{display:flex;align-items:center;gap:12px;font-size:21px;color:var(--body);flex:none}
+.m-check .box{width:26px;height:26px;border-radius:7px;background:var(--red);display:flex;align-items:center;justify-content:center;color:#0A0A0B;font-size:18px;font-weight:700}
+.m-toggle{width:54px;height:30px;border-radius:999px;background:var(--red);position:relative;flex:none}
+.m-toggle i{position:absolute;top:4px;right:4px;width:22px;height:22px;border-radius:50%;background:#fff}
+.m-chip{border:1px solid var(--red-line);color:var(--red);border-radius:999px;padding:9px 20px;font-size:20px;font-weight:500;flex:none}
+.m-table{width:150px;flex:none;display:flex;flex-direction:column;gap:9px;padding:2px 0}
+.m-table .h{height:10px;border-radius:5px;background:rgba(255,255,255,.3)}
+.m-table .r{height:8px;border-radius:4px;background:#26262C}
+.m-table .r:nth-child(3){width:72%}
+.mocks-cap{margin-top:26px;font-size:21px;color:var(--faint)}
+
+/* ===== 04 flow ===== */
+.flow{display:flex;align-items:stretch;margin:6px 0 52px}
+.node{width:430px;flex:none;border:1px solid var(--hair);border-radius:16px;background:var(--panel);padding:32px 36px;display:flex;flex-direction:column;min-height:272px}
+.node .nic{width:42px;height:42px;stroke:var(--red);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;margin-bottom:18px}
+.node h3{font-size:34px;font-weight:700;margin-bottom:14px}
+.node p{font-size:22px;color:var(--muted);line-height:1.4}
+.node .tag{margin-top:auto;font-size:17px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:500;padding-top:20px}
+.conn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-width:130px}
+.conn .lbl{font-size:18px;letter-spacing:.08em;text-transform:uppercase;color:#8E8E96;font-weight:500}
+.conn svg{display:block}
+.lead1{font-size:30px;font-weight:500;margin-bottom:16px}
+.lead2{font-size:24px;color:var(--muted)}
+
+/* ===== 05 cards ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:42px}
+.card{border:1px solid var(--hair);border-radius:16px;background:var(--panel);padding:36px 38px;min-height:216px;display:flex;flex-direction:column}
+.card .num{font-size:64px;font-weight:700;line-height:1;margin-bottom:22px}
+.card .num .r{color:var(--red)}
+.card .cap{font-size:22px;color:var(--muted);line-height:1.38;margin-top:auto}
+.card.text .big{font-size:31px;font-weight:500;line-height:1.2;margin-bottom:16px}
+.card.text .cap{margin-top:0}
+.card.visual .big2{font-size:22px;font-weight:500;margin:16px 0 7px}
+.card.visual .cap{font-size:18px;color:var(--faint);margin-top:0}
+.caption{font-size:21px;color:var(--faint)}
+/* app skeleton */
+.sk{border:1px solid var(--hair2);border-radius:10px;background:#0C0C0F;overflow:hidden}
+.sk-top{height:24px;background:#17171B;display:flex;align-items:center;gap:6px;padding:0 10px}
+.sk-top i{width:8px;height:8px;border-radius:50%;background:#2A2A30}
+.sk-top .b{width:86px;height:8px;border-radius:4px;background:#26262C;margin-left:6px}
+.sk-body{display:flex;height:70px}
+.sk-side{width:84px;background:#111114;border-right:1px solid var(--hair);padding:9px 10px;display:flex;flex-direction:column;gap:7px}
+.sk-side i{height:7px;border-radius:3px;background:#26262C;display:block}
+.sk-side i:first-child{background:rgba(255,82,82,.5)}
+.sk-main{flex:1;padding:9px 12px;display:flex;flex-direction:column;gap:8px}
+.sk-main i{height:8px;border-radius:4px;background:#202026;display:block}
+.sk-main i:nth-child(1){width:58%}
+.sk-main i:nth-child(2){width:88%}
+.sk-main i:nth-child(3){width:44%}
+/* repo chips */
+.repos{display:flex;flex-direction:column;gap:8px}
+.repo{border:1px solid var(--hair2);border-radius:9px;padding:9px 12px;display:flex;align-items:center;gap:10px;font-size:17px;font-weight:500}
+.repo .rd{width:9px;height:9px;border-radius:50%;background:var(--red);flex:none}
+.repo + .repo .rd{background:#3A3A42}
+.repo .sub{font-size:13px;color:var(--faint);font-weight:400}
+
+/* ===== 06 speed ===== */
+.sflow{display:flex;align-items:center;margin:4px 0 48px}
+.in-group{display:flex;flex-direction:column;gap:12px;flex:none}
+.in-chip{border:1px solid var(--hair2);border-radius:14px;background:var(--panel);padding:20px 28px;font-size:24px;color:var(--body);display:flex;flex-direction:column;gap:4px;min-width:340px}
+.in-chip .s{font-size:17px;color:var(--faint);letter-spacing:.02em}
+.plus{align-self:flex-start;color:var(--red);font-size:22px;font-weight:700;padding-left:28px}
+.big-conn{flex:none;width:110px;display:flex;align-items:center;justify-content:center}
+.ai-node{flex:none;background:var(--red);color:#0A0A0B;border-radius:14px;padding:26px 34px;display:flex;flex-direction:column;gap:6px}
+.ai-node .t{font-size:30px;font-weight:700}
+.ai-node .s{font-size:17px;font-weight:500;opacity:.75}
+.out-wrap{flex:none;display:flex;flex-direction:column;align-items:flex-start}
+.pwin{width:430px;border:1px solid var(--hair2);border-radius:12px;background:#0C0C0F;overflow:hidden}
+.pwin-top{height:30px;background:#17171B;display:flex;align-items:center;gap:7px;padding:0 12px}
+.pwin-top i{width:9px;height:9px;border-radius:50%;background:#2A2A30}
+.pwin-top .url{height:12px;flex:0 0 170px;margin-left:8px;background:#101013;border-radius:6px}
+.pwin-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:11px}
+.pwin-body .r{display:flex;gap:10px;align-items:center}
+.pwin-body .rowbar{height:12px;border-radius:6px;background:#202026;flex:1}
+.pwin-body .b-red{height:26px;width:92px;border-radius:7px;background:var(--red);flex:none}
+.pwin-body .b-out{height:26px;width:92px;border-radius:7px;border:1.5px solid rgba(255,255,255,.28);flex:none}
+.pwin-cap{margin-top:14px;font-size:18px;color:var(--faint)}
+.chip-line{display:flex;align-items:center;gap:22px;margin-top:34px}
+.chip-line .lbl{font-size:21px;color:#8E8E96;flex:none}
+.mono{flex:1;border:1px solid var(--hair2);background:var(--panel);border-radius:10px;padding:15px 22px;font-family:var(--mono);font-size:19px;color:var(--body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mono .acc{color:var(--red)}
+.note{margin-top:24px;font-size:20px;color:var(--faint);line-height:1.5}
+
+/* ===== 07 statement ===== */
+.statement{font-size:64px;font-weight:700;line-height:1.16;letter-spacing:-.01em;max-width:1560px;margin-bottom:64px}
+.statement .acc{color:var(--red)}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:56px}
+.col3 .idx{font-size:20px;color:var(--red);font-weight:500;letter-spacing:.12em;margin-bottom:16px}
+.col3 h4{font-size:27px;font-weight:500;margin-bottom:12px}
+.col3 p{font-size:22px;color:var(--muted);line-height:1.5}
+
+/* ===== 08 compare ===== */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-bottom:46px}
+.cmp{border:1px solid var(--hair);border-radius:16px;background:var(--panel);padding:38px 44px;display:flex;flex-direction:column;min-height:424px}
+.cmp.st{border-color:rgba(255,82,82,.38)}
+.cmp h3{font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E96;font-weight:500;margin-bottom:30px}
+.cmp.st h3{color:var(--red)}
+.steps{display:flex;flex-direction:column;gap:21px}
+.step{font-size:25px;color:#D6D6DA;display:flex;gap:18px;align-items:baseline}
+.step .n{color:var(--faint);font-size:18px;width:36px;flex:none;font-variant-numeric:tabular-nums}
+.cmp .total{margin-top:auto;font-size:46px;font-weight:700;display:flex;align-items:center;gap:16px}
+.clock{width:36px;height:36px;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.cmp.now .total{color:#8E8E96}
+.cmp.now .clock{stroke:#8E8E96}
+.cmp.st .total{color:var(--red)}
+.cmp.st .clock{stroke:var(--red)}
+.tri{display:flex;gap:64px}
+.tri .item{display:flex;gap:18px;align-items:flex-start;flex:1}
+.tri .item .sq{margin-top:9px;width:10px;height:10px}
+.tri .item p{font-size:22px;color:var(--muted);line-height:1.45}
+.tri .item p b{color:var(--body);font-weight:500}
+
+/* ===== 09 hero ===== */
+.hero-line{font-size:86px;font-weight:700;line-height:1.1;letter-spacing:-.015em;margin-bottom:58px;max-width:1600px}
+.hero-line .acc{color:var(--red)}
+
+/* ===== 10 roles ===== */
+.roles .row{display:flex;gap:44px;align-items:flex-start;padding:25px 0;border-bottom:1px solid var(--hair)}
+.roles .row:last-child{border-bottom:0}
+.roles .role{width:430px;flex:none;display:flex;gap:20px;align-items:flex-start;font-size:28px;font-weight:500}
+.roles .role .sq{margin-top:11px}
+.roles .txt{font-size:27px;color:#C9C9CF;line-height:1.36;padding-top:2px}
+.roles .row .ic{margin-left:auto;align-self:center}
+
+/* ===== 11 steps ===== */
+.steps5 .row{display:flex;gap:36px;padding:24px 0;border-bottom:1px solid var(--hair)}
+.steps5 .row:last-child{border-bottom:0}
+.steps5 .n{font-size:24px;color:var(--red);font-weight:500;width:58px;flex:none;padding-top:7px;font-variant-numeric:tabular-nums}
+.steps5 p{font-size:28px;color:var(--body);line-height:1.36}
+.linkchip{margin-top:46px;display:inline-flex;align-items:center;gap:18px;border:1px solid var(--hair2);border-radius:12px;padding:20px 30px;font-size:24px;color:var(--body);background:var(--panel);align-self:flex-start}
+.linkchip .acc{color:var(--red);font-weight:500}
+.linkchip .dim{color:var(--faint);font-size:20px}
+
+/* ===== 12 stats ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:34px}
+.stat{border:1px solid var(--hair);border-radius:16px;background:var(--panel);padding:40px 40px;min-height:242px;display:flex;flex-direction:column}
+.stat .n{font-size:104px;font-weight:700;line-height:.95;letter-spacing:-.02em;margin-bottom:26px}
+.stat .n .r{color:var(--red)}
+.stat .n.mid{font-size:84px}
+.stat .lbl{margin-top:auto;font-size:22px;color:var(--muted);line-height:1.38}
+
+/* ===== 13 roadmap ===== */
+.road{position:relative;padding-left:48px}
+.road:before{content:"";position:absolute;left:11px;top:22px;bottom:22px;width:2px;background:linear-gradient(180deg,var(--red),rgba(255,82,82,.12))}
+.road .row{position:relative;display:flex;align-items:center;gap:36px;padding:26px 0}
+.road .row:before{content:"";position:absolute;left:-44px;top:50%;transform:translateY(-50%);width:14px;height:14px;border-radius:50%;background:#0A0A0B;border:2px solid var(--red)}
+.road .chip{flex:none;width:200px;text-align:center;font-size:17px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;border-radius:999px;padding:11px 0}
+.chip.wip{background:var(--red);color:#0A0A0B}
+.chip.on{border:1px solid rgba(255,255,255,.22);color:#C9C9CF}
+.chip.goal{border:1px solid var(--red-line);color:var(--red)}
+.road p{font-size:29px;color:var(--body);line-height:1.3}
+
+/* ===== 14 final ===== */
+.fin-h{font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-.015em;max-width:1600px;margin-bottom:52px}
+.fin-h .acc{color:var(--red)}
+.fin-rows .row{padding:20px 0}
+.fin-rows .row p{font-size:27px}
+.callout{margin-top:auto;border:1px solid var(--red-line);background:var(--red-soft);border-radius:16px;padding:32px 40px;display:flex;align-items:center;gap:30px}
+.callout .lab{flex:none;font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:500}
+.callout p{font-size:29px;color:#fff}
+
+/* ===== HUD ===== */
+.hud{position:absolute;left:120px;right:120px;bottom:42px;display:flex;align-items:center;justify-content:space-between;z-index:5;pointer-events:none}
+.brand{pointer-events:auto;background:none;border:0;color:var(--faint);font:inherit;font-size:19px;letter-spacing:.04em;cursor:pointer;display:flex;align-items:center;gap:14px;padding:0;border-radius:8px}
+.brand b{font-weight:700}
+.brand .ii{color:var(--red)}
+.brand .ui{color:#fff}
+.brand:hover{color:#C9C9CF}
+.brand:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.hud-r{display:flex;align-items:center;gap:18px;pointer-events:auto}
+.counter{font-size:20px;color:#8E8E96;min-width:112px;text-align:right;font-variant-numeric:tabular-nums;letter-spacing:.08em}
+.nav{width:52px;height:52px;border-radius:50%;border:1px solid var(--hair2);background:rgba(255,255,255,.02);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,opacity .2s,background .2s}
+.nav:hover{border-color:var(--red-line);background:rgba(255,82,82,.06)}
+.nav:disabled{opacity:.22;cursor:default}
+.nav:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.nav svg{width:20px;height:20px;display:block}
+.nav.small{width:44px;height:44px}
+.progress{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.07);z-index:5}
+.progress i{display:block;height:100%;width:0;background:var(--red);transition:width .45s ease}
+.hint{position:absolute;left:50%;bottom:130px;transform:translateX(-50%) translateY(10px);background:rgba(255,255,255,.06);border:1px solid var(--hair2);border-radius:999px;padding:14px 30px;font-size:20px;color:#C9C9CF;opacity:0;transition:opacity .5s ease,transform .5s ease;z-index:6;pointer-events:none;backdrop-filter:blur(4px)}
+.hint.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media (prefers-reduced-motion: reduce){
+  .slide{transition:none}
+  .slide.active .anim{animation:none;opacity:1}
+  .progress i{transition:none}
+  .hint{transition:none}
+}
+
+@media print{
+  body{overflow:visible;background:#0A0A0B}
+  .app{position:static;display:block}
+  .stage{transform:none!important;width:1920px;height:1080px}
+  .slide{position:relative;inset:auto;opacity:1!important;visibility:visible!important;page-break-after:always;width:1920px;height:1080px}
+  .hud,.hint,.progress{display:none!important}
+  .slide .anim{opacity:1!important;animation:none!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:1920px 1080px;margin:0}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="scaler" id="scaler">
+    <div class="stage" id="stage">
+
+      <!-- 01 Титул -->
+      <section class="slide" data-screen="titul">
+        <div class="t-brand anim">iiko · design system</div>
+        <div class="t-date anim" style="--d:.05s">октябрь 2026</div>
+        <div class="t-inner">
+          <div class="t-mark anim" style="--d:.05s"><span class="ii">ii</span><span class="ui">ui</span></div>
+          <div class="t-rule anim" style="--d:.14s"></div>
+          <h1 class="t-title anim" style="--d:.2s">Дизайн-система iiko</h1>
+          <p class="t-sub anim" style="--d:.26s">Один язык интерфейсов для всех продуктов iiko</p>
+        </div>
+      </section>
+
+      <!-- 02 Проблема -->
+      <section class="slide" data-screen="problema">
+        <div class="kicker anim"><i class="sq"></i><span>01 · Проблема</span></div>
+        <h2 class="anim" style="--d:.06s">Как было без системы</h2>
+        <div class="rows">
+          <div class="row anim" style="--d:.1s"><i class="sq"></i><p>Каждый новый экран рисуется и собирается с нуля</p><svg class="ic" viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><path d="M5 14V7a2 2 0 0 1 2-2h7"/></svg></div>
+          <div class="row anim" style="--d:.16s"><i class="sq"></i><p>Одинаковые элементы в разных продуктах выглядят по-разному</p><svg class="ic" viewBox="0 0 24 24"><path d="M5.5 9.5h13M5.5 14.5h13M14.5 5.5l-5 13"/></svg></div>
+          <div class="row anim" style="--d:.22s"><i class="sq"></i><p>Правки расходятся: в макетах одно, в коде — другое</p><svg class="ic" viewBox="0 0 24 24"><path d="M12 4v5M8.7 7.2 12 4l3.3 3.2M12 20v-5M8.7 16.8 12 20l3.3-3.2"/></svg></div>
+          <div class="row anim" style="--d:.28s"><i class="sq"></i><p>Прототип — это дни ручной работы</p><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></div>
+          <div class="row anim" style="--d:.34s"><i class="sq"></i><p>Новичку непонятно, «как у нас принято»</p><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9.7 10a2.5 2.5 0 1 1 3.4 2.4c-.75.3-1.1.8-1.1 1.5v.3M12 16.8v.01"/></svg></div>
+        </div>
+      </section>
+
+      <!-- 03 Что такое ДС -->
+      <section class="slide" data-screen="constructor">
+        <div class="kicker anim"><i class="sq"></i><span>02 · Что это</span></div>
+        <h2 class="anim" style="--d:.06s">Конструктор интерфейсов</h2>
+        <div class="grid2">
+          <div class="bullet anim" style="--d:.1s"><i class="sq"></i><p>Готовые детали + правила сборки — из них собирается любой экран</p></div>
+          <div class="bullet anim" style="--d:.16s"><i class="sq"></i><p>Детали: кнопки, поля, таблицы, меню — во всех нужных вариантах</p></div>
+          <div class="bullet anim" style="--d:.22s"><i class="sq"></i><p>Правила: цвета, шрифты, отступы, размеры — зафиксированы в токенах</p></div>
+          <div class="bullet anim" style="--d:.28s"><i class="sq"></i><p>Один раз собрали и проверили — используют все продукты</p></div>
+        </div>
+        <div class="mocks anim" style="--d:.36s">
+          <div class="m-btnfill">Кнопка</div>
+          <div class="m-btnout">Отмена</div>
+          <div class="m-input"><div class="l">Название</div><div class="v">Касса 1</div></div>
+          <div class="m-check"><span class="box">✓</span>Выбрать</div>
+          <div class="m-toggle"><i></i></div>
+          <div class="m-chip">Активен</div>
+          <div class="m-table"><div class="h"></div><div class="r"></div><div class="r"></div></div>
+        </div>
+        <div class="mocks-cap anim" style="--d:.42s">Готовые детали — одинаковые во всех продуктах</div>
+      </section>
+
+      <!-- 04 Два зеркала -->
+      <section class="slide" data-screen="dva-zerkala">
+        <div class="kicker anim"><i class="sq"></i><span>03 · Как устроено</span></div>
+        <h2 class="anim" style="--d:.06s">Два зеркала и мост</h2>
+        <div class="flow anim" style="--d:.12s">
+          <div class="node">
+            <svg class="nic" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9.4 4v16M4 9.4h16"/></svg>
+            <h3>Figma</h3>
+            <p>Мастер-компоненты и переменные: здесь система проектируется</p>
+            <div class="tag">для дизайнеров</div>
+          </div>
+          <div class="conn">
+            <span class="lbl">генератор</span>
+            <svg width="150" height="24" viewBox="0 0 150 24" fill="none"><path d="M2 12H138" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M136 4L148 12L136 20" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div class="node">
+            <svg class="nic" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg>
+            <h3>Код на GitHub</h3>
+            <p>Те же компоненты и токены в чистом виде: для разработки и ИИ</p>
+            <div class="tag">для разработчиков и ИИ</div>
+          </div>
+          <div class="conn">
+            <span class="lbl">подключение</span>
+            <svg width="150" height="24" viewBox="0 0 150 24" fill="none"><path d="M2 12H138" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M136 4L148 12L136 20" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div class="node">
+            <svg class="nic" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M3 9.2h18"/></svg>
+            <h3>Продукты iiko</h3>
+            <p>Берут всё из системы — ничего не копируют друг у друга</p>
+            <div class="tag">десктоп и мобильные</div>
+          </div>
+        </div>
+        <div class="lead1 anim" style="--d:.3s">Обновилась деталь — обновилась у всех</div>
+        <div class="lead2 anim" style="--d:.36s">Один источник правды: изменили в системе — увидели все продукты</div>
+      </section>
+
+      <!-- 05 Что сделано -->
+      <section class="slide" data-screen="fakt">
+        <div class="kicker anim"><i class="sq"></i><span>04 · Факты</span></div>
+        <h2 class="anim" style="--d:.06s">Что уже сделано</h2>
+        <div class="cards">
+          <div class="card anim" style="--d:.1s"><div class="num">106</div><div class="cap">компонентов описано в системе (Figma)</div></div>
+          <div class="card anim" style="--d:.16s"><div class="num">2000<span class="r">+</span></div><div class="cap">токенов: цвета, шрифты, отступы, тени</div></div>
+          <div class="card anim" style="--d:.22s"><div class="num">37</div><div class="cap">компонентов переведено в код — веб-слой</div></div>
+          <div class="card anim" style="--d:.28s"><div class="num">28</div><div class="cap">компонентов — мобильный слой (планшет и телефон)</div></div>
+          <div class="card visual anim" style="--d:.34s">
+            <div class="sk">
+              <div class="sk-top"><i></i><i></i><i></i><span class="b"></span></div>
+              <div class="sk-body"><div class="sk-side"><i></i><i></i><i></i><i></i></div><div class="sk-main"><i></i><i></i><i></i></div></div>
+            </div>
+            <div class="big2">Шапка и меню</div>
+            <div class="cap">общие блоки приложения — приходят сами</div>
+          </div>
+          <div class="card visual anim" style="--d:.4s">
+            <div class="repos">
+              <div class="repo"><span class="rd"></span>DS<span class="sub">два слоя · подключатель</span></div>
+              <div class="repo"><span class="rd"></span>Prototypes<span class="sub">прототипы · база знаний</span></div>
+            </div>
+            <div class="big2">GitHub · iiko-DS</div>
+            <div class="cap">витрины, спецификация, инструкции</div>
+          </div>
+        </div>
+        <div class="caption anim" style="--d:.46s">Это не макеты на полке — система живёт и обновляется</div>
+      </section>
+
+      <!-- 06 Скорость с ИИ -->
+      <section class="slide" data-screen="skorost">
+        <div class="kicker anim"><i class="sq"></i><span>05 · Скорость</span></div>
+        <h2 class="anim" style="--d:.06s">Прототип за часы — с помощью ИИ</h2>
+        <div class="sflow anim" style="--d:.12s">
+          <div class="in-group">
+            <div class="in-chip">Макет<span class="s">экран из Figma</span></div>
+            <span class="plus">+</span>
+            <div class="in-chip">Инструкция дизайн-системы<span class="s">одна ссылка</span></div>
+          </div>
+          <div class="big-conn">
+            <svg width="86" height="24" viewBox="0 0 86 24" fill="none"><path d="M2 12H74" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M72 4L84 12L72 20" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div class="ai-node"><span class="t">ИИ</span><span class="s">любой ассистент</span></div>
+          <div class="big-conn">
+            <svg width="86" height="24" viewBox="0 0 86 24" fill="none"><path d="M2 12H74" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M72 4L84 12L72 20" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div class="out-wrap">
+            <div class="pwin">
+              <div class="pwin-top"><i></i><i></i><i></i><span class="url"></span></div>
+              <div class="pwin-body">
+                <div class="r"><span class="rowbar" style="max-width:120px"></span><span class="b-red"></span></div>
+                <div class="r"><span class="rowbar"></span></div>
+                <div class="r"><span class="rowbar" style="max-width:62%"></span><span class="b-out"></span></div>
+              </div>
+            </div>
+            <div class="pwin-cap">Живой прототип — открывается в браузере</div>
+          </div>
+        </div>
+        <div class="rows mini-rows">
+          <div class="row anim" style="--d:.24s"><i class="sq"></i><p>ИИ собирает из настоящих компонентов системы</p></div>
+          <div class="row anim" style="--d:.3s"><i class="sq"></i><p>Ничего не скачивать, не настраивать, не ждать разработчика</p></div>
+        </div>
+        <div class="chip-line anim" style="--d:.38s">
+          <span class="lbl">Подключение — одна строка:</span>
+          <span class="mono">&lt;script src=<span class="acc">"https://iiko-ds.github.io/DS/connect.js"</span> defer&gt;&lt;/script&gt;</span>
+        </div>
+        <div class="note anim" style="--d:.44s">Работает с любым ИИ — Hermes · ChatGPT · Claude · Copilot. Уже собраны прототипы реальных экранов: настройки, поставщики, прайс-листы, создание продукта.</div>
+      </section>
+
+      <!-- 07 Почему работает -->
+      <section class="slide" data-screen="pochemu">
+        <div class="kicker anim"><i class="sq"></i><span>06 · Почему</span></div>
+        <div class="statement anim" style="--d:.08s;margin-top:26px">ИИ не выдумывает &mdash; он собирает <span class="acc">из системы</span></div>
+        <div class="cols3">
+          <div class="col3 anim" style="--d:.2s">
+            <div class="idx">01</div>
+            <h4>Всё описано</h4>
+            <p>Компоненты, варианты, состояния и правила — в одном месте</p>
+          </div>
+          <div class="col3 anim" style="--d:.26s">
+            <div class="idx">02</div>
+            <h4>Спецификация для ИИ</h4>
+            <p>Написана так, чтобы её читал любой ассистент — без доработок</p>
+          </div>
+          <div class="col3 anim" style="--d:.32s">
+            <div class="idx">03</div>
+            <h4>Предсказуемо</h4>
+            <p>Прототип выглядит как продукт, а не «как получилось»</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 Процесс -->
+      <section class="slide" data-screen="process">
+        <div class="kicker anim"><i class="sq"></i><span>07 · Процесс</span></div>
+        <h2 class="anim" style="--d:.06s">Роль системы в процессах</h2>
+        <div class="compare">
+          <div class="cmp now anim" style="--d:.12s">
+            <h3>Было</h3>
+            <div class="steps">
+              <div class="step"><span class="n">01</span>Идея</div>
+              <div class="step"><span class="n">02</span>Макет в Figma</div>
+              <div class="step"><span class="n">03</span>Ручной прототип</div>
+              <div class="step"><span class="n">04</span>Правки и уточнения</div>
+              <div class="step"><span class="n">05</span>Вёрстка «с нуля»</div>
+            </div>
+            <div class="total"><svg class="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.2 2"/></svg>недели</div>
+          </div>
+          <div class="cmp st anim" style="--d:.18s">
+            <h3>Стало</h3>
+            <div class="steps">
+              <div class="step"><span class="n">01</span>Идея</div>
+              <div class="step"><span class="n">02</span>Живой прототип за часы — на системе</div>
+              <div class="step"><span class="n">03</span>Решение на реальном прототипе</div>
+              <div class="step"><span class="n">04</span>Сборка из готовых компонентов</div>
+            </div>
+            <div class="total"><svg class="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.2 2"/></svg>часы</div>
+          </div>
+        </div>
+        <div class="tri anim" style="--d:.28s">
+          <div class="item"><i class="sq"></i><p><b>Продукт</b> — гипотезы проверяются на живых прототипах, а не на словах</p></div>
+          <div class="item"><i class="sq"></i><p><b>Разработка</b> — не тратит время на стили и «перевод с макета»</p></div>
+          <div class="item"><i class="sq"></i><p><b>Система</b> — изменение вносится один раз и расходится по продуктам</p></div>
+        </div>
+      </section>
+
+      <!-- 09 Роль дизайнеров -->
+      <section class="slide" data-screen="lyudi">
+        <div class="kicker anim"><i class="sq"></i><span>08 · Люди</span></div>
+        <div class="hero-line anim" style="--d:.08s;margin-top:26px">Скорость построили <span class="acc">дизайнеры</span></div>
+        <div class="rows">
+          <div class="row anim" style="--d:.2s"><i class="sq"></i><p>Систему создают и развивают дизайнеры: компоненты, правила, качество</p></div>
+          <div class="row anim" style="--d:.26s"><i class="sq"></i><p>Дизайнер решает, что правильно, и принимает результат</p></div>
+          <div class="row anim" style="--d:.32s"><i class="sq"></i><p>ИИ ускоряет сборку, но решения остаются за дизайном</p></div>
+          <div class="row anim" style="--d:.38s"><i class="sq"></i><p>Система масштабирует работу дизайна на все продукты</p></div>
+        </div>
+      </section>
+
+      <!-- 10 Ценность -->
+      <section class="slide" data-screen="cennost">
+        <div class="kicker anim"><i class="sq"></i><span>09 · Ценность</span></div>
+        <h2 class="anim" style="--d:.06s">Что получает каждый</h2>
+        <div class="roles">
+          <div class="row anim" style="--d:.1s"><div class="role"><i class="sq"></i>Руководство</div><div class="txt">единый облик продуктов, быстрые изменения, меньше переделок</div><svg class="ic" viewBox="0 0 24 24"><path d="M4 19h16M7.5 15.5 11 11l2.8 2.4L19 7.5"/></svg></div>
+          <div class="row anim" style="--d:.16s"><div class="role"><i class="sq"></i>Продакт-менеджеры</div><div class="txt">проверка гипотез живыми прототипами за часы</div><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/></svg></div>
+          <div class="row anim" style="--d:.22s"><div class="role"><i class="sq"></i>Дизайнеры</div><div class="txt">меньше рутины, больше проектных задач; наработки масштабируются</div><svg class="ic" viewBox="0 0 24 24"><path d="M14.5 5.5l4 4L9.5 18.5h-4v-4l9-9z"/></svg></div>
+          <div class="row anim" style="--d:.28s"><div class="role"><i class="sq"></i>Разработчики</div><div class="txt">готовые проверенные компоненты, единые правила, меньше споров</div><svg class="ic" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></div>
+          <div class="row anim" style="--d:.34s"><div class="role"><i class="sq"></i>Новички</div><div class="txt">одна понятная система вместо «спроси, как у нас принято»</div><svg class="ic" viewBox="0 0 24 24"><circle cx="10" cy="8.5" r="3.5"/><path d="M4.5 19c.8-3 3-4.5 5.5-4.5 1.4 0 2.6.5 3.6 1.3M17 9v6M14 12h6"/></svg></div>
+        </div>
+      </section>
+
+      <!-- 11 Практика -->
+      <section class="slide" data-screen="praktika">
+        <div class="kicker anim"><i class="sq"></i><span>10 · Практика</span></div>
+        <h2 class="anim" style="--d:.06s">Как этим пользоваться</h2>
+        <div class="steps5">
+          <div class="row anim" style="--d:.1s"><span class="n">01</span><p>Всё в одном месте: организация iiko-DS на GitHub</p></div>
+          <div class="row anim" style="--d:.16s"><span class="n">02</span><p>Подключить прототип — одна строка, ничего не устанавливая</p></div>
+          <div class="row anim" style="--d:.22s"><span class="n">03</span><p>Собирать из готовых компонентов — без «своих» кнопок и цветов</p></div>
+          <div class="row anim" style="--d:.28s"><span class="n">04</span><p>Изменения — через личную ветку и проверку: общая версия не ломается</p></div>
+          <div class="row anim" style="--d:.34s"><span class="n">05</span><p>Инструкции и рецепты — в базе знаний, в том числе для ИИ</p></div>
+        </div>
+        <div class="linkchip anim" style="--d:.42s"><span class="dim">Начать здесь:</span><span class="acc">github.com/iiko-DS</span><span class="dim">— инструкция «с чего начать»</span></div>
+      </section>
+
+      <!-- 12 Цифры -->
+      <section class="slide" data-screen="cifry">
+        <div class="kicker anim"><i class="sq"></i><span>11 · Итоги</span></div>
+        <h2 class="anim" style="--d:.06s">Цифры</h2>
+        <div class="stats">
+          <div class="stat anim" style="--d:.1s"><div class="n">106</div><div class="lbl">компонентов в системе</div></div>
+          <div class="stat anim" style="--d:.16s"><div class="n">2000<span class="r">+</span></div><div class="lbl">токенов: цвета, шрифты, отступы, тени</div></div>
+          <div class="stat anim" style="--d:.22s"><div class="n">37</div><div class="lbl">компонентов в веб-коде</div></div>
+          <div class="stat anim" style="--d:.28s"><div class="n">28</div><div class="lbl">компонентов — мобильный слой</div></div>
+          <div class="stat anim" style="--d:.34s"><div class="n">≈10</div><div class="lbl">прототипов экранов уже собрано</div></div>
+          <div class="stat anim" style="--d:.4s"><div class="n mid">37 + 38</div><div class="lbl">задач по ДС в Jira: закрыто + в работе</div></div>
+        </div>
+        <div class="caption anim" style="--d:.46s">За числами — работающая система, встроенная в ежедневную работу</div>
+      </section>
+
+      <!-- 13 Что дальше -->
+      <section class="slide" data-screen="plan">
+        <div class="kicker anim"><i class="sq"></i><span>12 · План</span></div>
+        <h2 class="anim" style="--d:.06s">Что дальше</h2>
+        <div class="road">
+          <div class="row anim" style="--d:.1s"><span class="chip wip">в работе</span><p>Мобильная адаптация: планшет и телефон — 38 задач</p></div>
+          <div class="row anim" style="--d:.16s"><span class="chip on">постоянно</span><p>Система растёт: новые компоненты и состояния</p></div>
+          <div class="row anim" style="--d:.22s"><span class="chip on">план</span><p>Подключаем команды: обучение, рецепты, поддержка</p></div>
+          <div class="row anim" style="--d:.28s"><span class="chip goal">цель</span><p>Все интерфейсы iiko собираются по дизайн-системе</p></div>
+        </div>
+      </section>
+
+      <!-- 14 Итог -->
+      <section class="slide" data-screen="itog">
+        <div class="kicker anim"><i class="sq"></i><span>13 · Итог</span></div>
+        <div class="fin-h anim" style="--d:.08s;margin-top:20px">Дизайн-система — это инфраструктура <span class="acc">скорости и качества</span></div>
+        <div class="rows fin-rows">
+          <div class="row anim" style="--d:.2s"><i class="sq"></i><p>Единый облик продуктов и меньше переделок</p></div>
+          <div class="row anim" style="--d:.26s"><i class="sq"></i><p>Прототипы за часы: система + любой ИИ</p></div>
+          <div class="row anim" style="--d:.32s"><i class="sq"></i><p>Результат работы дизайнеров — инструмент на всю команду</p></div>
+        </div>
+        <div class="callout anim" style="--d:.42s">
+          <span class="lab">Просьба</span>
+          <p>Поддержать курс: интерфейсы собираем по дизайн-системе</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="hud" id="hud">
+    <button class="brand" id="brand" aria-label="В начало" title="В начало">
+      <span><b class="ii">ii</b><b class="ui">ui</b></span>
+      <span>— дизайн-система iiko</span>
+    </button>
+    <div class="hud-r">
+      <span class="counter" id="counter">01 / 14</span>
+      <button class="nav small" id="home" aria-label="В начало" title="В начало">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5.5 5v14M19 5l-9 7 9 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="nav" id="prev" aria-label="Предыдущий слайд" title="Назад">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M15 5L8 12L15 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="nav" id="next" aria-label="Следующий слайд" title="Вперёд">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="progress"><i id="bar"></i></div>
+  <div class="hint" id="hint">Листать: ← → · F — во весь экран · Home — в начало</div>
+
+</div>
+<script>
+(function(){
+  var stage = document.getElementById('stage');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var N = slides.length;
+  var idx = 0;
+  var counter = document.getElementById('counter');
+  var bar = document.getElementById('bar');
+  var prev = document.getElementById('prev');
+  var next = document.getElementById('next');
+  var home = document.getElementById('home');
+  var brand = document.getElementById('brand');
+  var KEY = 'iiui-deck-v1';
+
+  function fit(){
+    var k = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    stage.style.transform = 'scale(' + k + ')';
+  }
+
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+
+  function show(i, persist){
+    if (i < 0 || i > N - 1) return;
+    idx = i;
+    for (var j = 0; j < N; j++) slides[j].classList.toggle('active', j === i);
+    counter.textContent = pad(i + 1) + ' / ' + N;
+    bar.style.width = ((i + 1) / N * 100) + '%';
+    prev.disabled = (i === 0);
+    next.disabled = (i === N - 1);
+    home.disabled = (i === 0);
+    if (persist !== false) {
+      try { localStorage.setItem(KEY, String(i)); } catch (e) {}
+      try { history.replaceState(null, '', '#s' + (i + 1)); } catch (e) {}
+    }
+  }
+
+  function toggleFull(){
+    if (!document.fullscreenElement) {
+      if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) document.exitFullscreen();
+    }
+  }
+
+  prev.addEventListener('click', function(){ show(idx - 1); });
+  next.addEventListener('click', function(){ show(idx + 1); });
+  home.addEventListener('click', function(){ show(0); });
+  brand.addEventListener('click', function(){ show(0); });
+
+  document.addEventListener('keydown', function(e){
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' ') { show(idx + 1); e.preventDefault(); }
+    else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp') { show(idx - 1); e.preventDefault(); }
+    else if (k === 'Home') { show(0); e.preventDefault(); }
+    else if (k === 'End') { show(N - 1); e.preventDefault(); }
+    else if (k === 'f' || k === 'F' || k === 'а' || k === 'А') { toggleFull(); }
+  });
+
+  var tx = null, ty = null;
+  document.addEventListener('touchstart', function(e){
+    tx = e.changedTouches[0].clientX; ty = e.changedTouches[0].clientY;
+  }, {passive: true});
+  document.addEventListener('touchend', function(e){
+    if (tx === null) return;
+    var dx = e.changedTouches[0].clientX - tx;
+    var dy = e.changedTouches[0].clientY - ty;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) show(idx + (dx < 0 ? 1 : -1));
+    tx = null; ty = null;
+  }, {passive: true});
+
+  fit();
+  window.addEventListener('resize', fit);
+
+  var start = 0;
+  try {
+    var m = location.hash.match(/^#s(\d+)$/);
+    if (m) { start = parseInt(m[1], 10) - 1; }
+    else {
+      var v = parseInt(localStorage.getItem(KEY), 10);
+      if (!isNaN(v)) start = v;
+    }
+  } catch (e) {}
+  if (start < 0 || start > N - 1) start = 0;
+  show(start);
+
+  window.addEventListener('hashchange', function(){
+    var m2 = location.hash.match(/^#s(\d+)$/);
+    if (m2) {
+      var n2 = parseInt(m2[1], 10) - 1;
+      if (n2 !== idx && n2 >= 0 && n2 < N) show(n2);
+    }
+  });
+
+  try {
+    if (!localStorage.getItem('iiui-hint-1')) {
+      localStorage.setItem('iiui-hint-1', '1');
+      var hint = document.getElementById('hint');
+      setTimeout(function(){
+        hint.classList.add('show');
+        setTimeout(function(){ hint.classList.remove('show'); }, 5200);
+      }, 900);
+    }
+  } catch (e) {}
+
+  /* для проверки из консоли */
+  window.deckGo = function(n){ show(n - 1); };
+  window.deckState = function(){ return { idx: idx, total: N }; };
+  window.deckFit = fit;
+})();
+</script>
+</body>
+</html>
