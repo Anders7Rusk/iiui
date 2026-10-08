@@ -582,6 +582,14 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .shi i{width:100%;height:60px;border-radius:10px;display:block;border:1px solid rgba(255,255,255,.06)}
 .shi .dpn{font-family:var(--mono);font-size:11px;color:#8E8E96}
 
+.c-lead{font-size:24px;color:#A6A6AD;margin:-26px 0 16px;max-width:1560px}
+.tk3{grid-template-columns:repeat(3,1fr)}
+.tk3 .csw{flex-wrap:wrap;gap:14px 44px}
+.szr{display:flex;align-items:flex-end;gap:12px}
+.szi{display:flex;flex-direction:column;align-items:center;gap:6px}
+.szi i{background:#35353C;border-radius:4px;display:block}
+.szi span{font-family:var(--mono);font-size:11px;color:#8E8E96}
+
 /* ===== HUD ===== */
 .hud{position:absolute;left:120px;right:120px;bottom:42px;display:flex;align-items:center;justify-content:space-between;z-index:5;pointer-events:none}
 .brand{pointer-events:auto;background:none;border:0;color:var(--faint);font:inherit;font-size:19px;letter-spacing:.04em;cursor:pointer;display:flex;align-items:center;gap:14px;padding:0;border-radius:8px}
@@ -684,6 +692,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
       <section class="slide" data-screen="constructor">
         <div class="kicker anim"><i class="sq"></i><span>03 · Что это</span></div>
         <h2 class="anim" style="--d:.06s">Конструктор интерфейсов</h2>
+        <p class="c-lead anim" style="--d:.1s">Конструктор — это сама дизайн-система: одни и те же детали — в Figma, в коде и в Git. Из неё собирают и люди, и ИИ.</p>
         <div class="lvls anim" style="--d:.14s">
           <div class="lvl-1">
             <div class="lvl-head">Простые детали</div>
@@ -837,8 +846,8 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <h2 class="anim" style="--d:.06s">Токены</h2>
         <div class="dwrap">
           <div class="dvis anim" style="--d:.14s">
-            <div class="tkgrid">
-              <div class="tkcard wide">
+            <div class="tkgrid tk3">
+              <div class="tkcard">
                 <div class="tk-lb2"><span>Цвета</span><span class="mono-s">HEX</span></div>
                 <div class="csw">
                   <div class="cswi"><i style="background:#448AFF"></i><span>#448AFF</span></div>
@@ -855,6 +864,17 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
                 <div class="trow2"><span style="font-size:18px">Текст</span><span class="val">16</span></div>
                 <div class="trow2"><span style="font-size:14px;color:#C9C9CF">Подпись</span><span class="val">14</span></div>
                 <div class="trow2"><span style="font-size:12px;color:#8E8E96">Мелкий</span><span class="val">12</span></div>
+              </div>
+              <div class="tkcard">
+                <div class="tk-lb2"><span>Размеры</span><span class="mono-s">px</span></div>
+                <div class="szr">
+                  <div class="szi"><i style="width:4px;height:4px"></i><span>4</span></div>
+                  <div class="szi"><i style="width:8px;height:8px"></i><span>8</span></div>
+                  <div class="szi"><i style="width:12px;height:12px"></i><span>12</span></div>
+                  <div class="szi"><i style="width:16px;height:16px"></i><span>16</span></div>
+                  <div class="szi"><i style="width:24px;height:24px"></i><span>24</span></div>
+                  <div class="szi"><i style="width:32px;height:32px"></i><span>32</span></div>
+                </div>
               </div>
               <div class="tkcard">
                 <div class="tk-lb2"><span>Отступы</span><span class="mono-s">px</span></div>
