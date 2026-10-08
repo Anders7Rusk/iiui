@@ -234,6 +234,127 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .callout .lab{flex:none;font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:500}
 .callout p{font-size:29px;color:#fff}
 
+/* ===== v4: визуальные блоки ===== */
+[data-screen="problema"] h2{margin-bottom:38px}
+[data-screen="problema"] .rows .row{padding:19px 0}
+[data-screen="fakt"] .cards{gap:22px;margin-bottom:32px}
+[data-screen="fakt"] .card{padding:30px 34px}
+[data-screen="fakt"] .vbox{height:96px;margin-bottom:14px}
+[data-screen="fakt"] .pmob{height:96px;padding:12px 11px}
+[data-screen="fakt"] .codebox{padding:10px 14px;line-height:1.7}
+.badrow{display:flex;align-items:center;gap:24px;margin-top:26px;padding:24px 34px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
+.bad-b{display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:500;flex:1}
+.bb1{height:60px;background:var(--red);color:#0A0A0B;border-radius:16px}
+.bb2{height:46px;border:2px solid #6E6E76;border-radius:2px;color:#C9C9CF;font-weight:400}
+.bb3{height:56px;border:1.5px solid rgba(255,255,255,.35);border-radius:999px;color:#fff}
+.bb4{height:44px;background:#3A3A42;color:#8E8E96;border-radius:8px;font-size:17px}
+.bb5{height:64px;border:1.5px dashed rgba(255,82,82,.65);border-radius:10px;color:var(--red)}
+.bad-cap{margin-top:18px;font-size:20px;color:var(--faint)}
+.bad-cap b{color:var(--red);font-weight:500}
+/* титул: мини-детали */
+.tk-strip{display:flex;gap:16px;margin-top:46px}
+.tk{border:1px solid var(--hair2);border-radius:10px;background:var(--panel);padding:10px 16px;display:flex;align-items:center}
+.tk .mb{height:34px;padding:0 20px;border-radius:8px;background:var(--red);color:#0A0A0B;font-size:16px;font-weight:500;display:flex;align-items:center}
+.tk .mf{width:128px;height:34px;border:1.5px solid rgba(255,255,255,.2);border-radius:8px;background:var(--panel2);display:flex;align-items:center;padding:0 12px;font-size:15px;color:var(--faint)}
+.tk .mt{width:42px;height:24px;border-radius:999px;background:var(--red);position:relative}
+.tk .mt i{position:absolute;top:3px;right:3px;width:18px;height:18px;border-radius:50%;background:#fff}
+.tk .mc{width:24px;height:24px;border-radius:7px;background:var(--red);color:#0A0A0B;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.tk .mch{border:1px solid var(--red-line);color:var(--red);border-radius:999px;padding:6px 16px;font-size:15px;font-weight:500}
+/* слайд 3: витрина в два ряда */
+.mocks{flex-direction:column;align-items:stretch;gap:24px;padding:32px 44px}
+.mrow{display:flex;gap:32px;align-items:center}
+.m-tabs{display:flex;gap:28px;border-bottom:1px solid var(--hair2);padding-bottom:9px;flex:none}
+.m-tabs span{font-size:20px;color:var(--muted);padding-bottom:7px;font-weight:500}
+.m-tabs span.on{color:#fff;border-bottom:3px solid var(--red)}
+.m-select{width:210px;height:52px;border:1.5px solid rgba(255,255,255,.22);border-radius:10px;background:var(--panel2);display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:20px;color:var(--body);flex:none}
+.m-select svg{width:18px;height:18px;stroke:#8E8E96;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+/* слайд 5: картинки в карточках */
+.vbox{height:104px;display:flex;align-items:center;margin-bottom:16px;overflow:hidden}
+.mcg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%}
+.mcg i{height:24px;border-radius:6px;background:#202026;display:block}
+.mcg i.hl{background:var(--red)}
+.swg{display:flex;gap:9px}
+.swg i{width:36px;height:36px;border-radius:9px;display:block;border:1px solid var(--hair2)}
+.codebox{width:100%;border:1px solid var(--hair2);border-radius:10px;background:#0C0C0F;padding:12px 16px;font-family:var(--mono);font-size:14px;line-height:1.75}
+.codebox div{white-space:nowrap;overflow:hidden}
+.codebox .c1{color:#8E8E96}
+.codebox .c2{color:#E9E9EC}
+.codebox .c3{color:var(--red)}
+.pmob{width:92px;height:104px;border:2px solid var(--hair2);border-radius:16px;padding:14px 11px;display:flex;flex-direction:column;gap:8px;background:#0C0C0F;flex:none}
+.pmob i{height:7px;border-radius:3px;background:#202026;display:block}
+.pmob i:first-child{background:rgba(255,82,82,.55)}
+/* слайд 7: пиктограммы */
+.col3 .pict{height:112px;border:1px solid var(--hair);border-radius:14px;background:var(--panel);margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:14px;padding:14px}
+.pcg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:150px}
+.pcg i{height:26px;border-radius:6px;background:#202026;display:block}
+.pcg i.hl{background:rgba(255,82,82,.75)}
+.pdoc{width:56px;height:72px;border:1.5px solid var(--hair2);border-radius:8px;padding:10px 9px;display:flex;flex-direction:column;gap:7px;flex:none}
+.pdoc i{height:6px;border-radius:3px;background:#26262C;display:block}
+.pdoc i:first-child{background:rgba(255,82,82,.55);width:70%}
+.pspark{width:30px;height:30px;flex:none}
+.pwin-m{width:120px;height:82px;border:1.5px solid var(--hair2);border-radius:10px;background:#0C0C0F;padding:10px;display:flex;flex-direction:column;gap:8px;position:relative;flex:none}
+.pwin-m i{height:8px;border-radius:4px;background:#202026;display:block}
+.pwin-m i:first-child{width:55%}
+.pwin-m i:nth-child(2){width:85%}
+.pcheck{position:absolute;right:-10px;bottom:-10px;width:30px;height:30px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;color:#0A0A0B;font-size:16px;font-weight:700}
+/* слайд 8: полосы времени */
+.tbar{height:14px;border-radius:7px;margin-top:16px}
+.cmp.now .tbar{width:100%;background:#3A3A42}
+.cmp.st .tbar{width:22%;min-width:60px;background:var(--red)}
+/* слайд 9: пирамида */
+.lyt{display:flex;gap:64px;align-items:flex-start}
+.lyt .rows{flex:1}
+.stack{flex:none;width:470px;display:flex;flex-direction:column;gap:12px;padding-top:6px}
+.layer{border:1px solid var(--hair2);border-radius:14px;padding:20px 26px;background:var(--panel);display:flex;flex-direction:column;gap:5px}
+.layer .lt{font-size:21px;font-weight:500}
+.layer .ls{font-size:16px;color:var(--faint)}
+.layer.acc{border-color:var(--red-line);background:var(--red-soft)}
+.layer.acc .lt{color:var(--red)}
+.larrow{display:flex;justify-content:center;height:22px;align-items:center}
+.larrow svg{width:22px;height:22px;stroke:#8E8E96;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+/* слайд 10: артефакты ролей */
+.art{flex:none;width:150px;height:64px;display:flex;align-items:center;justify-content:flex-end;gap:9px;overflow:hidden;margin-left:auto;align-self:center}
+.achart{display:flex;align-items:flex-end;gap:7px;height:56px}
+.achart i{width:13px;border-radius:4px 4px 0 0;background:#3A3A42;display:block}
+.achart i.hl{background:var(--red)}
+.awin{width:96px;height:58px;border:1.5px solid var(--hair2);border-radius:9px;background:#0C0C0F;overflow:hidden;flex:none}
+.awin .t{height:12px;background:#17171B;display:flex;align-items:center;gap:4px;padding:0 7px}
+.awin .t i{width:5px;height:5px;border-radius:50%;background:#2A2A30;display:block}
+.awin .b{padding:8px 9px;display:flex;flex-direction:column;gap:6px}
+.awin .b i{height:6px;border-radius:3px;background:#202026;display:block}
+.awin .b i:first-child{width:60%}
+.aart{width:96px;height:58px;border:1.5px solid var(--hair2);border-radius:9px;position:relative;background:#0C0C0F;flex:none}
+.aart .c{position:absolute;left:10px;top:10px;width:16px;height:16px;border-radius:50%;background:var(--red)}
+.aart .b1{position:absolute;left:34px;top:13px;width:44px;height:8px;border-radius:4px;background:#26262C}
+.aart .b2{position:absolute;left:10px;top:36px;width:68px;height:8px;border-radius:4px;background:#202026}
+.acode{font-family:var(--mono);font-size:14px;line-height:1.85;text-align:right;white-space:nowrap}
+.acode .l1{color:#E9E9EC}
+.acode .l2{color:var(--red)}
+.alist{width:104px;display:flex;flex-direction:column;gap:9px}
+.alist .li{display:flex;align-items:center;gap:8px}
+.alist .li i{width:10px;height:10px;border-radius:3px;background:#3A3A42;flex:none;display:block}
+.alist .li.hl i{background:var(--red)}
+.alist .li span{height:7px;border-radius:3px;background:#26262C;flex:1;display:block}
+/* слайд 11: мокап GitHub */
+.sidewrap{display:flex;gap:56px}
+.sidewrap .steps5{flex:1}
+.sidewrap .steps5 p{font-size:26px}
+.ghmock{flex:none;width:500px;align-self:center;border:1px solid var(--hair2);border-radius:16px;background:#0C0C0F;overflow:hidden}
+.ghm-top{height:42px;background:#17171B;display:flex;align-items:center;gap:7px;padding:0 16px}
+.ghm-top i{width:9px;height:9px;border-radius:50%;background:#2A2A30;display:block}
+.ghm-top .u{margin-left:8px;font-family:var(--mono);font-size:14px;color:#8E8E96}
+.ghm-body{padding:16px 18px;display:flex;flex-direction:column;gap:11px}
+.ghm-repo{border:1px solid var(--hair);border-radius:10px;padding:13px 16px;display:flex;align-items:center;gap:12px;font-size:18px}
+.ghm-repo .d{width:9px;height:9px;border-radius:50%;background:#3A3A42;flex:none}
+.ghm-repo .s{color:var(--faint);font-size:14px;margin-left:auto}
+.ghm-repo.hot{border-color:var(--red-line)}
+.ghm-repo.hot .d{background:var(--red)}
+.ghm-repo.hot .s{color:var(--red)}
+/* слайд 14: знак в плашке */
+.callout .cm{margin-left:auto;font-size:44px;font-weight:900;letter-spacing:-.03em;flex:none;line-height:.8}
+.callout .cm .ii{color:var(--red)}
+.callout .cm .ui{color:#fff;opacity:.85}
+
 /* ===== HUD ===== */
 .hud{position:absolute;left:120px;right:120px;bottom:42px;display:flex;align-items:center;justify-content:space-between;z-index:5;pointer-events:none}
 .brand{pointer-events:auto;background:none;border:0;color:var(--faint);font:inherit;font-size:19px;letter-spacing:.04em;cursor:pointer;display:flex;align-items:center;gap:14px;padding:0;border-radius:8px}
@@ -287,6 +408,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
           <div class="t-rule anim" style="--d:.14s"></div>
           <h1 class="t-title anim" style="--d:.2s">Дизайн-система iiko</h1>
           <p class="t-sub anim" style="--d:.26s">Один язык интерфейсов для всех продуктов iiko</p>
+          <div class="tk-strip anim" style="--d:.34s"><div class="tk"><span class="mb">Кнопка</span></div><div class="tk"><span class="mf">Касса 1</span></div><div class="tk"><span class="mt"><i></i></span></div><div class="tk"><span class="mc">✓</span></div><div class="tk"><span class="mch">Активен</span></div></div>
         </div>
       </section>
 
@@ -301,6 +423,14 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
           <div class="row anim" style="--d:.28s"><i class="sq"></i><p>Прототип — это дни ручной работы</p><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></div>
           <div class="row anim" style="--d:.34s"><i class="sq"></i><p>Новичку непонятно, «как у нас принято»</p><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9.7 10a2.5 2.5 0 1 1 3.4 2.4c-.75.3-1.1.8-1.1 1.5v.3M12 16.8v.01"/></svg></div>
         </div>
+        <div class="badrow anim" style="--d:.4s">
+          <div class="bad-b bb1">Сохранить</div>
+          <div class="bad-b bb2">Сохранить</div>
+          <div class="bad-b bb3">Сохранить</div>
+          <div class="bad-b bb4">Сохранить</div>
+          <div class="bad-b bb5">Сохранить</div>
+        </div>
+        <div class="bad-cap anim" style="--d:.46s">Без системы одно действие выглядит <b>по-разному в каждом продукте</b></div>
       </section>
 
       <!-- 03 Что такое ДС -->
@@ -314,13 +444,20 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
           <div class="bullet anim" style="--d:.28s"><i class="sq"></i><p>Один раз собрали и проверили — используют все продукты</p></div>
         </div>
         <div class="mocks anim" style="--d:.36s">
-          <div class="m-btnfill">Кнопка</div>
-          <div class="m-btnout">Отмена</div>
-          <div class="m-input"><div class="l">Название</div><div class="v">Касса 1</div></div>
-          <div class="m-check"><span class="box">✓</span>Выбрать</div>
-          <div class="m-toggle"><i></i></div>
-          <div class="m-chip">Активен</div>
-          <div class="m-table"><div class="h"></div><div class="r"></div><div class="r"></div></div>
+          <div class="mrow">
+            <div class="m-btnfill">Кнопка</div>
+            <div class="m-btnout">Отмена</div>
+            <div class="m-input"><div class="l">Название</div><div class="v">Касса 1</div></div>
+            <div class="m-select"><span>Черновик</span><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            <div class="m-check"><span class="box">✓</span>Выбрать</div>
+            <div class="m-toggle"><i></i></div>
+          </div>
+          <div class="mrow">
+            <div class="m-chip">Активен</div>
+            <div class="m-chip" style="border-color:rgba(255,255,255,.25);color:#8E8E96">Черновик</div>
+            <div class="m-tabs"><span class="on">Основное</span><span>Настройки</span><span>Отчёты</span></div>
+            <div class="m-table" style="width:210px"><div class="h"></div><div class="r"></div><div class="r"></div></div>
+          </div>
         </div>
         <div class="mocks-cap anim" style="--d:.42s">Готовые детали — одинаковые во всех продуктах</div>
       </section>
@@ -366,10 +503,10 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <div class="kicker anim"><i class="sq"></i><span>04 · Результат</span></div>
         <h2 class="anim" style="--d:.06s">Система собрана и работает</h2>
         <div class="cards">
-          <div class="card lead anim" style="--d:.1s"><div class="ct"><svg class="cico" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>Компоненты</span></div><div class="cap">Все основные элементы интерфейса — с вариантами и состояниями</div></div>
-          <div class="card lead anim" style="--d:.16s"><div class="ct"><svg class="cico" viewBox="0 0 24 24"><circle cx="8.5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="15.5" cy="12" r="2.2"/></svg><span>Токены</span></div><div class="cap">Единые правила цвета, шрифтов, отступов и теней</div></div>
-          <div class="card lead anim" style="--d:.22s"><div class="ct"><svg class="cico" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg><span>Код</span></div><div class="cap">Компоненты живут и в коде — готовы для разработки и ИИ</div></div>
-          <div class="card lead anim" style="--d:.28s"><div class="ct"><svg class="cico" viewBox="0 0 24 24"><rect x="7" y="3.5" width="10" height="17" rx="2"/><path d="M10.5 17.5h3"/></svg><span>Мобильные</span></div><div class="cap">Отдельный мобильный слой: планшет и телефон</div></div>
+          <div class="card lead anim" style="--d:.1s"><div class="vbox"><div class="mcg"><i class="hl"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="hl"></i></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>Компоненты</span></div><div class="cap">Все основные элементы интерфейса — с вариантами и состояниями</div></div>
+          <div class="card lead anim" style="--d:.16s"><div class="vbox"><div class="swg"><i style="background:#FF5252"></i><i style="background:#FFFFFF"></i><i style="background:#A6A6AD"></i><i style="background:#616161"></i><i style="background:#333333"></i></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><circle cx="8.5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="15.5" cy="12" r="2.2"/></svg><span>Токены</span></div><div class="cap">Единые правила цвета, шрифтов, отступов и теней</div></div>
+          <div class="card lead anim" style="--d:.22s"><div class="vbox"><div class="codebox"><div class="c1">ds-button.css</div><div class="c2">.ds-btn {</div><div class="c3">&#160;&#160;background: #FF5252;</div></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg><span>Код</span></div><div class="cap">Компоненты живут и в коде — готовы для разработки и ИИ</div></div>
+          <div class="card lead anim" style="--d:.28s"><div class="vbox"><div class="pmob"><i></i><i></i><i></i><i></i></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><rect x="7" y="3.5" width="10" height="17" rx="2"/><path d="M10.5 17.5h3"/></svg><span>Мобильные</span></div><div class="cap">Отдельный мобильный слой: планшет и телефон</div></div>
           <div class="card visual anim" style="--d:.34s">
             <div class="sk">
               <div class="sk-top"><i></i><i></i><i></i><span class="b"></span></div>
@@ -436,16 +573,19 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <div class="statement anim" style="--d:.08s;margin-top:26px">ИИ не выдумывает &mdash; он собирает <span class="acc">из системы</span></div>
         <div class="cols3">
           <div class="col3 anim" style="--d:.2s">
+            <div class="pict"><div class="pcg"><i></i><i class="hl"></i><i></i><i></i><i></i><i class="hl"></i></div></div>
             <div class="idx">01</div>
             <h4>Всё описано</h4>
             <p>Компоненты, варианты, состояния и правила — в одном месте</p>
           </div>
           <div class="col3 anim" style="--d:.26s">
+            <div class="pict"><div class="pdoc"><i></i><i></i><i></i></div><svg class="pspark" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" stroke="#FF5252" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
             <div class="idx">02</div>
             <h4>Спецификация для ИИ</h4>
             <p>Написана так, чтобы её читал любой ассистент — без доработок</p>
           </div>
           <div class="col3 anim" style="--d:.32s">
+            <div class="pict"><div class="pwin-m"><i></i><i></i><i></i><div class="pcheck">✓</div></div></div>
             <div class="idx">03</div>
             <h4>Предсказуемо</h4>
             <p>Прототип выглядит как продукт, а не «как получилось»</p>
@@ -468,6 +608,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
               <div class="step"><span class="n">05</span>Вёрстка «с нуля»</div>
             </div>
             <div class="total"><svg class="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.2 2"/></svg>недели</div>
+            <div class="tbar"></div>
           </div>
           <div class="cmp st anim" style="--d:.18s">
             <h3>Стало</h3>
@@ -478,6 +619,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
               <div class="step"><span class="n">04</span>Сборка из готовых компонентов</div>
             </div>
             <div class="total"><svg class="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.2 2"/></svg>часы</div>
+            <div class="tbar"></div>
           </div>
         </div>
         <div class="tri anim" style="--d:.28s">
@@ -491,11 +633,20 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
       <section class="slide" data-screen="lyudi">
         <div class="kicker anim"><i class="sq"></i><span>08 · Люди</span></div>
         <div class="hero-line anim" style="--d:.08s;margin-top:26px">Скорость построили <span class="acc">дизайнеры</span></div>
-        <div class="rows">
+        <div class="lyt">
+          <div class="rows">
           <div class="row anim" style="--d:.2s"><i class="sq"></i><p>Систему создают и развивают дизайнеры: компоненты, правила, качество</p></div>
           <div class="row anim" style="--d:.26s"><i class="sq"></i><p>Дизайнер решает, что правильно, и принимает результат</p></div>
           <div class="row anim" style="--d:.32s"><i class="sq"></i><p>ИИ ускоряет сборку, но решения остаются за дизайном</p></div>
           <div class="row anim" style="--d:.38s"><i class="sq"></i><p>Система масштабирует работу дизайна на все продукты</p></div>
+          </div>
+          <div class="stack anim" style="--d:.44s">
+            <div class="layer"><span class="lt">Команды и продукты</span><span class="ls">собирают экраны по системе — с помощью ИИ</span></div>
+            <div class="larrow"><svg viewBox="0 0 24 24"><path d="M12 19V6M6 11l6-6 6 6"/></svg></div>
+            <div class="layer"><span class="lt">Система</span><span class="ls">компоненты, правила, качество интерфейсов</span></div>
+            <div class="larrow"><svg viewBox="0 0 24 24"><path d="M12 19V6M6 11l6-6 6 6"/></svg></div>
+            <div class="layer acc"><span class="lt">Дизайн</span><span class="ls">строит систему и принимает решения</span></div>
+          </div>
         </div>
       </section>
 
@@ -504,11 +655,11 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <div class="kicker anim"><i class="sq"></i><span>09 · Ценность</span></div>
         <h2 class="anim" style="--d:.06s">Что получает каждый</h2>
         <div class="roles">
-          <div class="row anim" style="--d:.1s"><div class="role"><i class="sq"></i>Руководство</div><div class="txt">единый облик продуктов, быстрые изменения, меньше переделок</div><svg class="ic" viewBox="0 0 24 24"><path d="M4 19h16M7.5 15.5 11 11l2.8 2.4L19 7.5"/></svg></div>
-          <div class="row anim" style="--d:.16s"><div class="role"><i class="sq"></i>Продакт-менеджеры</div><div class="txt">проверка гипотез живыми прототипами за часы</div><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/></svg></div>
-          <div class="row anim" style="--d:.22s"><div class="role"><i class="sq"></i>Дизайнеры</div><div class="txt">меньше рутины, больше проектных задач; наработки масштабируются</div><svg class="ic" viewBox="0 0 24 24"><path d="M14.5 5.5l4 4L9.5 18.5h-4v-4l9-9z"/></svg></div>
-          <div class="row anim" style="--d:.28s"><div class="role"><i class="sq"></i>Разработчики</div><div class="txt">готовые проверенные компоненты, единые правила, меньше споров</div><svg class="ic" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></div>
-          <div class="row anim" style="--d:.34s"><div class="role"><i class="sq"></i>Новички</div><div class="txt">одна понятная система вместо «спроси, как у нас принято»</div><svg class="ic" viewBox="0 0 24 24"><circle cx="10" cy="8.5" r="3.5"/><path d="M4.5 19c.8-3 3-4.5 5.5-4.5 1.4 0 2.6.5 3.6 1.3M17 9v6M14 12h6"/></svg></div>
+          <div class="row anim" style="--d:.1s"><div class="role"><i class="sq"></i>Руководство</div><div class="txt">единый облик продуктов, быстрые изменения, меньше переделок</div><div class="art"><div class="achart"><i style="height:22px"></i><i style="height:32px"></i><i style="height:42px"></i><i class="hl" style="height:56px"></i></div></div></div>
+          <div class="row anim" style="--d:.16s"><div class="role"><i class="sq"></i>Продакт-менеджеры</div><div class="txt">проверка гипотез живыми прототипами за часы</div><div class="art"><div class="awin"><div class="t"><i></i><i></i><i></i></div><div class="b"><i></i><i></i></div></div></div></div>
+          <div class="row anim" style="--d:.22s"><div class="role"><i class="sq"></i>Дизайнеры</div><div class="txt">меньше рутины, больше проектных задач; наработки масштабируются</div><div class="art"><div class="aart"><span class="c"></span><span class="b1"></span><span class="b2"></span></div></div></div>
+          <div class="row anim" style="--d:.28s"><div class="role"><i class="sq"></i>Разработчики</div><div class="txt">готовые проверенные компоненты, единые правила, меньше споров</div><div class="art"><div class="acode"><div class="l1">.ds-btn {</div><div class="l2">#FF5252;</div></div></div></div>
+          <div class="row anim" style="--d:.34s"><div class="role"><i class="sq"></i>Новички</div><div class="txt">одна понятная система вместо «спроси, как у нас принято»</div><div class="art"><div class="alist"><div class="li hl"><i></i><span></span></div><div class="li"><i></i><span></span></div><div class="li"><i></i><span></span></div></div></div></div>
         </div>
       </section>
 
@@ -516,12 +667,22 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
       <section class="slide" data-screen="praktika">
         <div class="kicker anim"><i class="sq"></i><span>10 · Практика</span></div>
         <h2 class="anim" style="--d:.06s">Как этим пользоваться</h2>
-        <div class="steps5">
+        <div class="sidewrap">
+          <div class="steps5">
           <div class="row anim" style="--d:.1s"><span class="n">01</span><p>Всё в одном месте: организация iiko-DS на GitHub</p></div>
           <div class="row anim" style="--d:.16s"><span class="n">02</span><p>Подключить прототип — одна строка, ничего не устанавливая</p></div>
           <div class="row anim" style="--d:.22s"><span class="n">03</span><p>Собирать из готовых компонентов — без «своих» кнопок и цветов</p></div>
           <div class="row anim" style="--d:.28s"><span class="n">04</span><p>Изменения — через личную ветку и проверку: общая версия не ломается</p></div>
           <div class="row anim" style="--d:.34s"><span class="n">05</span><p>Инструкции и рецепты — в базе знаний, в том числе для ИИ</p></div>
+          </div>
+          <div class="ghmock anim" style="--d:.4s">
+            <div class="ghm-top"><i></i><i></i><i></i><span class="u">github.com/iiko-DS</span></div>
+            <div class="ghm-body">
+              <div class="ghm-repo"><span class="d"></span>DS<span class="s">компоненты · веб и мобильные</span></div>
+              <div class="ghm-repo"><span class="d"></span>Prototypes<span class="s">прототипы · база знаний</span></div>
+              <div class="ghm-repo hot"><span class="d"></span>«С чего начать»<span class="s">открыть &rarr;</span></div>
+            </div>
+          </div>
         </div>
         <div class="linkchip anim" style="--d:.42s"><span class="dim">Начать здесь:</span><span class="acc">github.com/iiko-DS</span><span class="dim">— инструкция «с чего начать»</span></div>
       </section>
@@ -531,11 +692,11 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <div class="kicker anim"><i class="sq"></i><span>11 · Итоги</span></div>
         <h2 class="anim" style="--d:.06s">Общие выводы</h2>
         <div class="rows">
-          <div class="row anim" style="--d:.1s"><i class="sq"></i><p>Система построена и живёт — обновляется вместе с продуктами</p></div>
-          <div class="row anim" style="--d:.16s"><i class="sq"></i><p>Продукты развиваются быстрее: базовое не изобретается заново</p></div>
-          <div class="row anim" style="--d:.22s"><i class="sq"></i><p>Прототипы собираются на системе — и всё быстрее, с помощью ИИ</p></div>
-          <div class="row anim" style="--d:.28s"><i class="sq"></i><p>Решения дизайна принимаются один раз — и действуют во всех продуктах</p></div>
-          <div class="row anim" style="--d:.34s"><i class="sq"></i><p>Отдача растёт с каждой командой, которая собирает по системе</p></div>
+          <div class="row anim" style="--d:.1s"><i class="sq"></i><p>Система построена и живёт — обновляется вместе с продуктами</p><svg class="ic" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.4-5.6"/><path d="M20 4v4.6h-4.6"/></svg></div>
+          <div class="row anim" style="--d:.16s"><i class="sq"></i><p>Продукты развиваются быстрее: базовое не изобретается заново</p><svg class="ic" viewBox="0 0 24 24"><path d="M5 19L19 5M9.5 5H19v9.5"/></svg></div>
+          <div class="row anim" style="--d:.22s"><i class="sq"></i><p>Прототипы собираются на системе — и всё быстрее, с помощью ИИ</p><svg class="ic" viewBox="0 0 24 24"><path d="M12 4.5l1.6 4.4 4.4 1.6-4.4 1.6L12 16.5l-1.6-4.4L6 10.5l4.4-1.6z"/></svg></div>
+          <div class="row anim" style="--d:.28s"><i class="sq"></i><p>Решения дизайна принимаются один раз — и действуют во всех продуктах</p><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M8.5 12.3l2.4 2.4 4.6-4.9"/></svg></div>
+          <div class="row anim" style="--d:.34s"><i class="sq"></i><p>Отдача растёт с каждой командой, которая собирает по системе</p><svg class="ic" viewBox="0 0 24 24"><path d="M4 19h16M7.5 15.5 11 11l2.8 2.4L19 7.5"/></svg></div>
         </div>
       </section>
 
@@ -563,6 +724,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <div class="callout anim" style="--d:.42s">
           <span class="lab">Просьба</span>
           <p>Поддержать курс: интерфейсы собираем по дизайн-системе</p>
+          <div class="cm"><span class="ii">ii</span><span class="ui">ui</span></div>
         </div>
       </section>
 
