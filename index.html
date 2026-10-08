@@ -700,7 +700,8 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .prodline{margin-top:36px}
 .pl-label{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
 .pl-row{display:flex;gap:16px}
-.prodchip{flex:1;text-align:center;border:1px solid var(--hair2);border-radius:14px;padding:17px 10px;font-size:21px;color:#D9D9DE}
+.prodchip{flex:1;display:flex;align-items:center;justify-content:center;gap:12px;border:1px solid var(--hair2);border-radius:14px;padding:17px 12px;font-size:21px;color:#D9D9DE}
+.prodchip svg{width:22px;height:22px;flex:none;stroke:#BEBEC6}
 </style>
 </head>
 <body>
@@ -1305,10 +1306,10 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <div class="prodline anim" style="--d:.5s">
           <div class="pl-label">Что в системе</div>
           <div class="pl-row">
-            <span class="prodchip">Компоненты</span>
-            <span class="prodchip">Токены</span>
-            <span class="prodchip">Правила</span>
-            <span class="prodchip">Спецификация для ИИ</span>
+            <span class="prodchip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2" stroke="#FF5252"/></svg>Компоненты</span>
+            <span class="prodchip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="5.5" cy="12" r="3.4"/><circle cx="12" cy="12" r="3.4" stroke="#FF5252"/><circle cx="18.5" cy="12" r="3.4"/></svg>Токены</span>
+            <span class="prodchip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l7 2.8v5.7c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V5.8z"/><path d="M9.2 11.6l2 2 3.8-3.8" stroke="#FF5252"/></svg>Правила</span>
+            <span class="prodchip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><rect x="4" y="3" width="10" height="18" rx="2"/><path d="M7 8h4M7 12h4M7 16h2.5"/><path d="M18.5 12.8l1.1 2.3 2.3 1.1-2.3 1.1-1.1 2.3-1.1-2.3-2.3-1.1 2.3-1.1z" stroke="#FF5252"/></svg>Спецификация для ИИ</span>
           </div>
         </div>
       </section>
