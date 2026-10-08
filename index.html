@@ -1345,9 +1345,6 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
     prev.disabled = (i === 0);
     next.disabled = (i === N - 1);
     home.disabled = (i === 0);
-    if (persist !== false) {
-      try { localStorage.setItem(KEY, String(i)); } catch (e) {}
-    }
   }
 
   function toggleFull(){
@@ -1389,19 +1386,10 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 
   var start = 0;
   try {
-    var m = location.hash.match(/^#s(\d+)$/);
-    if (m) { start = parseInt(m[1], 10) - 1; }
+    // всегда открываем с первого слайда; убираем хвост #sN, если он остался в ссылке
+    if (location.hash) { history.replaceState(null, '', location.pathname + location.search); }
   } catch (e) {}
-  if (start < 0 || start > N - 1) start = 0;
   show(start);
-
-  window.addEventListener('hashchange', function(){
-    var m2 = location.hash.match(/^#s(\d+)$/);
-    if (m2) {
-      var n2 = parseInt(m2[1], 10) - 1;
-      if (n2 !== idx && n2 >= 0 && n2 < N) show(n2);
-    }
-  });
 
   try {
     if (!localStorage.getItem('iiui-hint-1')) {
