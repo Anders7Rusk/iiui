@@ -242,7 +242,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 [data-screen="fakt"] .vbox{height:96px;margin-bottom:14px}
 [data-screen="fakt"] .pmob{height:96px;padding:12px 11px}
 [data-screen="fakt"] .codebox{padding:10px 14px;line-height:1.7}
-.badrow{display:flex;align-items:center;gap:24px;margin-top:26px;padding:24px 34px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
+.badrow{display:flex;flex-direction:column;align-items:stretch;margin-top:26px;padding:20px 34px 24px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
 .bad-b{display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:500;flex:1}
 .bb1{height:60px;background:var(--red);color:#0A0A0B;border-radius:16px}
 .bb2{height:46px;border:2px solid #6E6E76;border-radius:2px;color:#C9C9CF;font-weight:400}
@@ -251,6 +251,12 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .bb5{height:64px;border:1.5px dashed rgba(255,82,82,.65);border-radius:10px;color:var(--red)}
 .bad-cap{margin-top:18px;font-size:20px;color:var(--faint)}
 .bad-cap b{color:var(--red);font-weight:500}
+.badhead{font-size:17px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E96;font-weight:500;margin-bottom:18px}
+.badhead span{color:var(--red)}
+.badline{display:flex;gap:24px;align-items:flex-end}
+.badcol{flex:1;display:flex;flex-direction:column;gap:12px;justify-content:flex-end}
+.badcol .bad-b{flex:none;width:100%}
+.bad-pl{font-size:15px;color:#6E6E76;letter-spacing:.04em;text-align:center}
 /* титул: мини-детали */
 .tk-strip{display:flex;gap:16px;margin-top:46px}
 .tk{border:1px solid var(--hair2);border-radius:10px;background:var(--panel);padding:10px 16px;display:flex;align-items:center}
@@ -582,13 +588,16 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
           <div class="row anim" style="--d:.34s"><i class="sq"></i><p>Новичку непонятно, «как у нас принято»</p></div>
         </div>
         <div class="badrow anim" style="--d:.4s">
-          <div class="bad-b bb1">Сохранить</div>
-          <div class="bad-b bb2">Сохранить</div>
-          <div class="bad-b bb3">Сохранить</div>
-          <div class="bad-b bb4">Сохранить</div>
-          <div class="bad-b bb5">Сохранить</div>
+          <div class="badhead">Одно действие — «Сохранить» — <span>пять разных кнопок</span></div>
+          <div class="badline">
+            <div class="badcol"><span class="bad-b bb1">Сохранить</span><span class="bad-pl">Касса</span></div>
+            <div class="badcol"><span class="bad-b bb2">Сохранить</span><span class="bad-pl">Веб</span></div>
+            <div class="badcol"><span class="bad-b bb3">Сохранить</span><span class="bad-pl">Офис</span></div>
+            <div class="badcol"><span class="bad-b bb4">Сохранить</span><span class="bad-pl">Планшет</span></div>
+            <div class="badcol"><span class="bad-b bb5">Сохранить</span><span class="bad-pl">Доставка</span></div>
+          </div>
         </div>
-        <div class="bad-cap anim" style="--d:.46s">Без системы одно действие выглядит <b>по-разному в каждом продукте</b></div>
+        <div class="bad-cap anim" style="--d:.46s">Одно действие — а привыкать приходится <b>к каждому продукту заново</b></div>
       </section>
 
       <!-- 03 Что такое ДС -->
