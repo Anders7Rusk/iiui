@@ -502,6 +502,32 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .ts-base .b-s{font-size:17px;color:#C9C9CF}
 .callout .ctxt{display:flex;flex-direction:column;gap:8px;min-width:0}
 .callout .call-sub{font-size:20px;color:#fff;opacity:.72}
+/* ===== токены: подробная сетка ===== */
+.tkgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:100%}
+.tkcard{border:1px solid var(--hair2);border-radius:12px;background:#0C0C0F;padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+.tkcard.wide{grid-column:span 2}
+.tk-lb2{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#6E6E76;font-weight:500}
+.tk-lb2 .mono-s{font-family:var(--mono);font-size:12px;color:#6E6E76;letter-spacing:0;text-transform:none}
+.csw{display:flex;gap:20px}
+.cswi{display:flex;flex-direction:column;align-items:center;gap:8px}
+.cswi i{width:46px;height:46px;border-radius:10px;border:1px solid var(--hair2);display:block}
+.cswi span{font-family:var(--mono);font-size:11px;color:#8E8E96}
+.trow2{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.trow2 .sm{font-weight:700}
+.trow2 .val{font-family:var(--mono);font-size:13px;color:#8E8E96;flex:none}
+.srow2{display:flex;align-items:center;gap:16px}
+.srow2 .spb2{height:12px;border-radius:6px;background:#3A3A42;display:block;flex:none}
+.srow2 .num{font-family:var(--mono);font-size:13px;color:#8E8E96}
+.rswi{display:flex;gap:26px}
+.rswi .ri{display:flex;flex-direction:column;align-items:center;gap:8px}
+.rswi .slot{height:62px;display:flex;align-items:center}
+.rswi .box{width:62px;height:62px;background:#202026;border:1.5px solid var(--hair2);display:block}
+.rswi .rv{font-family:var(--mono);font-size:12px;color:#8E8E96}
+.lpage{background:#F4F4F6;border-radius:10px;padding:16px 20px;display:flex;gap:18px;align-items:center;justify-content:center}
+.lcard{width:92px;height:56px;border-radius:8px;background:#fff}
+.lcard.s1{box-shadow:0 2px 6px rgba(0,0,0,.14)}
+.lcard.s2{box-shadow:0 10px 22px rgba(0,0,0,.22)}
+
 /* ===== HUD ===== */
 .hud{position:absolute;left:120px;right:120px;bottom:42px;display:flex;align-items:center;justify-content:space-between;z-index:5;pointer-events:none}
 .brand{pointer-events:auto;background:none;border:0;color:var(--faint);font:inherit;font-size:19px;letter-spacing:.04em;cursor:pointer;display:flex;align-items:center;gap:14px;padding:0;border-radius:8px}
@@ -757,16 +783,51 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <h2 class="anim" style="--d:.06s">Токены</h2>
         <div class="dwrap">
           <div class="dvis anim" style="--d:.14s">
-            <div class="tk2">
-              <div class="tkrow"><span class="tk-lb">Цвета</span><div class="swrow"><i style="background:#FF5252"></i><i style="background:#FFFFFF"></i><i style="background:#E0E0E0"></i><i style="background:#9E9E9E"></i><i style="background:#616161"></i><i style="background:#333333"></i></div></div>
-              <div class="tkrow"><span class="tk-lb">Шрифты</span><div class="tsp"><span class="t1">Заголовок</span><span class="t2">Текст</span><span class="t3">Подпись</span></div></div>
-              <div class="tkrow"><span class="tk-lb">Отступы и скругления</span><div class="sprow"><i class="spb" style="width:12px"></i><i class="spb" style="width:22px"></i><i class="spb" style="width:32px"></i><i class="spb" style="width:44px"></i><span class="rad r12"></span><span class="rad r8"></span></div></div>
+            <div class="tkgrid">
+              <div class="tkcard wide">
+                <div class="tk-lb2"><span>Цвета</span><span class="mono-s">HEX</span></div>
+                <div class="csw">
+                  <div class="cswi"><i style="background:#448AFF"></i><span>#448AFF</span></div>
+                  <div class="cswi"><i style="background:#333333"></i><span>#333333</span></div>
+                  <div class="cswi"><i style="background:#616161"></i><span>#616161</span></div>
+                  <div class="cswi"><i style="background:#9E9E9E"></i><span>#9E9E9E</span></div>
+                  <div class="cswi"><i style="background:#E0E0E0"></i><span>#E0E0E0</span></div>
+                  <div class="cswi"><i style="background:#FFFFFF"></i><span>#FFFFFF</span></div>
+                </div>
+              </div>
+              <div class="tkcard">
+                <div class="tk-lb2"><span>Шрифты</span><span class="mono-s">Roboto</span></div>
+                <div class="trow2"><span class="sm" style="font-size:24px">Заголовок</span><span class="val">18</span></div>
+                <div class="trow2"><span style="font-size:18px">Текст</span><span class="val">16</span></div>
+                <div class="trow2"><span style="font-size:14px;color:#C9C9CF">Подпись</span><span class="val">14</span></div>
+                <div class="trow2"><span style="font-size:12px;color:#8E8E96">Мелкий</span><span class="val">12</span></div>
+              </div>
+              <div class="tkcard">
+                <div class="tk-lb2"><span>Отступы</span><span class="mono-s">px</span></div>
+                <div class="srow2"><i class="spb2" style="width:24px"></i><span class="num">8</span></div>
+                <div class="srow2"><i class="spb2" style="width:48px"></i><span class="num">16</span></div>
+                <div class="srow2"><i class="spb2" style="width:72px"></i><span class="num">24</span></div>
+                <div class="srow2"><i class="spb2" style="width:96px"></i><span class="num">32</span></div>
+              </div>
+              <div class="tkcard">
+                <div class="tk-lb2"><span>Скругления</span><span class="mono-s">px</span></div>
+                <div class="rswi">
+                  <div class="ri"><span class="slot"><i class="box" style="border-radius:12px"></i></span><span class="rv">12</span></div>
+                  <div class="ri"><span class="slot"><i class="box" style="border-radius:8px"></i></span><span class="rv">8</span></div>
+                  <div class="ri"><span class="slot"><i class="box" style="border-radius:999px;width:62px;height:34px"></i></span><span class="rv">999</span></div>
+                </div>
+              </div>
+              <div class="tkcard">
+                <div class="tk-lb2"><span>Тени</span><span class="mono-s">card</span></div>
+                <div class="lpage"><div class="lcard s1"></div><div class="lcard s2"></div></div>
+              </div>
             </div>
           </div>
           <div class="dpts">
             <div class="dp anim" style="--d:.22s"><i class="sq"></i><p>Цвета, шрифты, отступы — зафиксированы цифрами</p></div>
-            <div class="dp anim" style="--d:.28s"><i class="sq"></i><p>Поменяли значение — обновилось во всех продуктах</p></div>
-            <div class="dp anim" style="--d:.34s"><i class="sq"></i><p>Никаких «на глаз» и случайных оттенков</p></div>
+            <div class="dp anim" style="--d:.28s"><i class="sq"></i><p>Одни и те же значения — в макетах и в коде</p></div>
+            <div class="dp anim" style="--d:.34s"><i class="sq"></i><p>Поменяли значение — обновилось во всех продуктах</p></div>
+            <div class="dp anim" style="--d:.4s"><i class="sq"></i><p>Никаких «на глаз» и случайных оттенков</p></div>
           </div>
         </div>
       </section>
