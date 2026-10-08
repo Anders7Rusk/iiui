@@ -355,6 +355,51 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .callout .cm .ii{color:var(--red)}
 .callout .cm .ui{color:#fff;opacity:.85}
 
+/* ===== v5: уровни (детали -> блоки -> экраны) ===== */
+.lvls{display:flex;align-items:flex-start;margin-top:6px}
+.lvl-1,.lvl-3{width:400px;flex:none}
+.lvl-2{flex:1;min-width:0}
+.lvl-head{font-size:18px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E96;font-weight:500;margin-bottom:18px}
+.lvl-body{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.lvlar{width:80px;flex:none;display:flex;align-items:center;justify-content:center;align-self:center}
+.lvlar svg{width:56px;height:24px;display:block}
+.grid22{border:1px solid var(--hair);border-radius:16px;background:var(--panel);padding:20px 22px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cmx{border:1px solid var(--hair2);border-radius:12px;background:#0C0C0F;padding:14px 16px;display:flex;flex-direction:column;gap:9px;justify-content:center}
+.cmx .c-title{font-size:16px;font-weight:500;color:#fff}
+.ttbl{display:flex;flex-direction:column;font-size:14px}
+.ttbl .tr{display:flex;gap:10px;padding:7px 6px;border-bottom:1px solid var(--hair);align-items:center}
+.ttbl .tr:last-child{border-bottom:0}
+.ttbl .tr.h{color:#6E6E76;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding-bottom:5px}
+.ttbl .tr span:first-child{flex:1.3;color:#E9E9EC;white-space:nowrap;overflow:hidden}
+.ttbl .tr span:nth-child(2){flex:.7;color:#A6A6AD;white-space:nowrap}
+.ttbl .tr.h span:first-child,.ttbl .tr.h span:nth-child(2){color:#6E6E76}
+.ttbl .tr.sel{background:rgba(255,82,82,.08);border-radius:8px;border-bottom:0}
+.tst{border:1px solid var(--red-line);color:var(--red);border-radius:999px;padding:2px 10px;font-size:11px;flex:none}
+.tst.off{border-color:rgba(255,255,255,.25);color:#8E8E96}
+.fld{display:flex;flex-direction:column;gap:5px}
+.fld .fl{font-size:12px;color:#8E8E96}
+.fld .fi{height:32px;border:1.5px solid rgba(255,255,255,.22);border-radius:8px;background:var(--panel2);display:flex;align-items:center;padding:0 10px;font-size:14px;color:#E9E9EC}
+.fbtns{display:flex;gap:10px;margin-top:4px}
+.fb1{height:32px;padding:0 14px;border-radius:8px;background:var(--red);color:#0A0A0B;font-size:13px;font-weight:500;display:flex;align-items:center}
+.fb2{height:32px;padding:0 14px;border-radius:8px;border:1.5px solid rgba(255,255,255,.3);color:#E9E9EC;font-size:13px;display:flex;align-items:center}
+.mmenu{display:flex;flex-direction:column;gap:3px;font-size:15px}
+.mmenu span{padding:8px 12px;border-radius:8px;color:#A6A6AD;display:flex;align-items:center}
+.mmenu span.on{background:var(--red-soft);color:#fff;box-shadow:inset 3px 0 0 var(--red)}
+.dlg .d-title{font-size:16px;font-weight:500;color:#fff}
+.dlg .d-txt{font-size:13px;color:#8E8E96}
+.wsc{width:100%;border:1.5px solid var(--hair2);border-radius:12px;background:#0C0C0F;overflow:hidden}
+.wsc-top{height:26px;background:#17171B;display:flex;align-items:center;gap:6px;padding:0 10px}
+.wsc-top i{width:8px;height:8px;border-radius:50%;background:#2A2A30;display:block}
+.wsc-body{display:flex;height:152px}
+.wsc-side{width:86px;border-right:1px solid var(--hair);background:#111114;padding:10px;display:flex;flex-direction:column;gap:8px}
+.wsc-side i{height:8px;border-radius:4px;background:#26262C;display:block}
+.wsc-side i.on{background:rgba(255,82,82,.55)}
+.wsc-main{flex:1;padding:12px 14px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.wb{height:9px;border-radius:4px;background:#202026}
+.w40{width:40%}.w80{width:80%}.w60{width:60%}
+.wrow{display:flex;align-items:center;gap:12px}
+.wbtn{height:28px;padding:0 14px;border-radius:7px;background:var(--red);color:#0A0A0B;font-size:13px;font-weight:500;display:flex;align-items:center;flex:none}
+
 /* ===== HUD ===== */
 .hud{position:absolute;left:120px;right:120px;bottom:42px;display:flex;align-items:center;justify-content:space-between;z-index:5;pointer-events:none}
 .brand{pointer-events:auto;background:none;border:0;color:var(--faint);font:inherit;font-size:19px;letter-spacing:.04em;cursor:pointer;display:flex;align-items:center;gap:14px;padding:0;border-radius:8px}
@@ -408,7 +453,6 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
           <div class="t-rule anim" style="--d:.14s"></div>
           <h1 class="t-title anim" style="--d:.2s">Дизайн-система iiko</h1>
           <p class="t-sub anim" style="--d:.26s">Один язык интерфейсов для всех продуктов iiko</p>
-          <div class="tk-strip anim" style="--d:.34s"><div class="tk"><span class="mb">Кнопка</span></div><div class="tk"><span class="mf">Касса 1</span></div><div class="tk"><span class="mt"><i></i></span></div><div class="tk"><span class="mc">✓</span></div><div class="tk"><span class="mch">Активен</span></div></div>
         </div>
       </section>
 
@@ -437,29 +481,61 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
       <section class="slide" data-screen="constructor">
         <div class="kicker anim"><i class="sq"></i><span>02 · Что это</span></div>
         <h2 class="anim" style="--d:.06s">Конструктор интерфейсов</h2>
-        <div class="grid2">
-          <div class="bullet anim" style="--d:.1s"><i class="sq"></i><p>Готовые детали + правила сборки — из них собирается любой экран</p></div>
-          <div class="bullet anim" style="--d:.16s"><i class="sq"></i><p>Детали: кнопки, поля, таблицы, меню — во всех нужных вариантах</p></div>
-          <div class="bullet anim" style="--d:.22s"><i class="sq"></i><p>Правила: цвета, шрифты, отступы, размеры — зафиксированы в токенах</p></div>
-          <div class="bullet anim" style="--d:.28s"><i class="sq"></i><p>Один раз собрали и проверили — используют все продукты</p></div>
-        </div>
-        <div class="mocks anim" style="--d:.36s">
-          <div class="mrow">
-            <div class="m-btnfill">Кнопка</div>
-            <div class="m-btnout">Отмена</div>
-            <div class="m-input"><div class="l">Название</div><div class="v">Касса 1</div></div>
-            <div class="m-select"><span>Черновик</span><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
-            <div class="m-check"><span class="box">✓</span>Выбрать</div>
-            <div class="m-toggle"><i></i></div>
+        <div class="lvls anim" style="--d:.14s">
+          <div class="lvl-1">
+            <div class="lvl-head">Простые детали</div>
+            <div class="lvl-body">
+              <div class="m-btnfill">Кнопка</div>
+              <div class="m-input"><div class="l">Название</div><div class="v">Касса 1</div></div>
+              <div class="m-check"><span class="box">✓</span>Выбрать</div>
+              <div class="m-chip">Активен</div>
+            </div>
           </div>
-          <div class="mrow">
-            <div class="m-chip">Активен</div>
-            <div class="m-chip" style="border-color:rgba(255,255,255,.25);color:#8E8E96">Черновик</div>
-            <div class="m-tabs"><span class="on">Основное</span><span>Настройки</span><span>Отчёты</span></div>
-            <div class="m-table" style="width:210px"><div class="h"></div><div class="r"></div><div class="r"></div></div>
+          <div class="lvlar"><svg viewBox="0 0 56 24" fill="none"><path d="M2 12H42" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M40 4l12 8-12 8" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="lvl-2">
+            <div class="lvl-head">Сложные блоки</div>
+            <div class="grid22">
+              <div class="cmx">
+                <div class="ttbl">
+                  <div class="tr h"><span>Название</span><span>Цена</span><span>Статус</span></div>
+                  <div class="tr sel"><span>Маргарита</span><span>490 ₽</span><span class="tst">В продаже</span></div>
+                  <div class="tr"><span>Цезарь</span><span>450 ₽</span><span class="tst off">Стоп-лист</span></div>
+                </div>
+              </div>
+              <div class="cmx">
+                <div class="c-title">Новый продукт</div>
+                <div class="fld"><span class="fl">Название</span><span class="fi">Маргарита</span></div>
+                <div class="fld"><span class="fl">Цена, ₽</span><span class="fi">490</span></div>
+                <div class="fbtns"><span class="fb1">Сохранить</span><span class="fb2">Отмена</span></div>
+              </div>
+              <div class="cmx">
+                <div class="mmenu"><span class="on">Меню</span><span>Склад</span><span>Сотрудники</span><span>Отчёты</span></div>
+              </div>
+              <div class="cmx dlg">
+                <div class="d-title">Удалить позицию?</div>
+                <div class="d-txt">Это действие нельзя отменить</div>
+                <div class="fbtns"><span class="fb1">Удалить</span><span class="fb2">Отмена</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="lvlar"><svg viewBox="0 0 56 24" fill="none"><path d="M2 12H42" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M40 4l12 8-12 8" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="lvl-3">
+            <div class="lvl-head">Готовые экраны</div>
+            <div class="wsc">
+              <div class="wsc-top"><i></i><i></i><i></i></div>
+              <div class="wsc-body">
+                <div class="wsc-side"><i></i><i class="on"></i><i></i><i></i></div>
+                <div class="wsc-main">
+                  <div class="wb w40"></div>
+                  <div class="wb w80"></div>
+                  <div class="wrow"><span class="wbtn">Добавить</span><div class="wb"></div></div>
+                  <div class="wb w60"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="mocks-cap anim" style="--d:.42s">Готовые детали — одинаковые во всех продуктах</div>
+        <div class="caption anim" style="--d:.44s;margin-top:30px">Так собирается любой экран: из деталей — блоки, из блоков — страницы</div>
       </section>
 
       <!-- 04 Два зеркала -->
@@ -503,7 +579,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <div class="kicker anim"><i class="sq"></i><span>04 · Результат</span></div>
         <h2 class="anim" style="--d:.06s">Система собрана и работает</h2>
         <div class="cards">
-          <div class="card lead anim" style="--d:.1s"><div class="vbox"><div class="mcg"><i class="hl"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="hl"></i></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>Компоненты</span></div><div class="cap">Все основные элементы интерфейса — с вариантами и состояниями</div></div>
+          <div class="card lead anim" style="--d:.1s"><div class="vbox"><div class="mcg"><i class="hl" style="grid-column:span 2"></i><i></i><i></i><i></i><i></i><i class="hl" style="grid-column:span 2"></i></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>Компоненты</span></div><div class="cap">Все основные элементы интерфейса — с вариантами и состояниями</div></div>
           <div class="card lead anim" style="--d:.16s"><div class="vbox"><div class="swg"><i style="background:#FF5252"></i><i style="background:#FFFFFF"></i><i style="background:#A6A6AD"></i><i style="background:#616161"></i><i style="background:#333333"></i></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><circle cx="8.5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="15.5" cy="12" r="2.2"/></svg><span>Токены</span></div><div class="cap">Единые правила цвета, шрифтов, отступов и теней</div></div>
           <div class="card lead anim" style="--d:.22s"><div class="vbox"><div class="codebox"><div class="c1">ds-button.css</div><div class="c2">.ds-btn {</div><div class="c3">&#160;&#160;background: #FF5252;</div></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg><span>Код</span></div><div class="cap">Компоненты живут и в коде — готовы для разработки и ИИ</div></div>
           <div class="card lead anim" style="--d:.28s"><div class="vbox"><div class="pmob"><i></i><i></i><i></i><i></i></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><rect x="7" y="3.5" width="10" height="17" rx="2"/><path d="M10.5 17.5h3"/></svg><span>Мобильные</span></div><div class="cap">Отдельный мобильный слой: планшет и телефон</div></div>
