@@ -594,6 +594,28 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 
 .c-lead{font-size:24px;color:#A6A6AD;margin:-26px 0 16px;max-width:1560px}
 [data-screen="constructor"] .c-lead{margin:-20px 0 30px}
+
+/* v21: финальные схемы (vyvody/itog) */
+.vywrap{display:flex;gap:56px;align-items:flex-start}
+.vywrap .rows{flex:0 0 1150px}
+.vyc{flex:1;min-width:0;border:1px solid var(--hair);border-radius:16px;padding:30px 28px;display:flex;flex-direction:column;align-items:center;background:#101013}
+.vyc-node{width:100%;border-radius:12px;padding:20px 24px}
+.vyc-sys{background:var(--red-soft);border:1px solid var(--red-line)}
+.vyc-prd{background:#191920;border:1px solid var(--hair)}
+.vyc-t{display:block;font-size:24px;font-weight:600;color:#fff}
+.vyc-s{display:block;margin-top:6px;font-size:16px;color:#8E8E96}
+.vyc-arrows{width:100%;display:flex;justify-content:space-between;padding:14px 30px;align-items:center}
+.vyc-arr{display:flex;flex-direction:column;align-items:center;gap:8px}
+.vyc-arr span{font-size:13px;line-height:1.35;color:#8E8E96;text-align:center}
+.vyc-arr svg{display:block}
+.fnrow{display:flex;align-items:center;gap:18px;margin-top:30px}
+.fn-node{flex:1;display:flex;align-items:center;gap:16px;border:1px solid var(--hair);border-radius:14px;padding:18px 22px;background:#101013;min-width:0}
+.fn-node-acc{border-color:var(--red-line);background:var(--red-soft)}
+.fn-n{flex:none;font-family:var(--mono);font-size:16px;color:var(--red);border:1px solid var(--red-line);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.fn-tx{min-width:0}
+.fn-t{display:block;font-size:21px;font-weight:600;color:#fff;line-height:1.2}
+.fn-s{display:block;margin-top:4px;font-size:15px;color:#8E8E96}
+.fn-arr{flex:none;display:block}
 .tk3{grid-template-columns:repeat(3,1fr)}
 .tk3 .csw{flex-wrap:wrap;gap:14px 44px}
 .szr2{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1.5px solid #3A3A42;padding:0 10px}
@@ -1286,12 +1308,34 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
       <section class="slide" data-screen="vyvody">
         <div class="kicker anim"><i class="sq"></i><span>18 · Итоги</span></div>
         <h2 class="anim" style="--d:.06s">Общие выводы</h2>
+        <div class="vywrap">
         <div class="rows">
           <div class="row anim" style="--d:.1s"><i class="sq"></i><p>Система построена и живёт - обновляется вместе с продуктами</p></div>
           <div class="row anim" style="--d:.16s"><i class="sq"></i><p>Продукты развиваются быстрее: базовое не изобретается заново</p></div>
           <div class="row anim" style="--d:.22s"><i class="sq"></i><p>Прототипы собираются на системе - и всё быстрее, с помощью ИИ</p></div>
           <div class="row anim" style="--d:.28s"><i class="sq"></i><p>Решения дизайна принимаются один раз - и действуют во всех продуктах</p></div>
           <div class="row anim" style="--d:.34s"><i class="sq"></i><p>Отдача растёт с каждой командой, которая собирает по системе</p></div>
+        </div>
+          <div class="vyc anim" style="--d:.4s">
+            <div class="vyc-node vyc-sys">
+              <span class="vyc-t">Дизайн-система</span>
+              <span class="vyc-s">компоненты · токены · правила</span>
+            </div>
+            <div class="vyc-arrows">
+              <div class="vyc-arr">
+                <svg width="24" height="96" viewBox="0 0 24 96" fill="none"><path d="M12 4V84" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M5 78l7 10 7-10" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>обновления<br>в продукты</span>
+              </div>
+              <div class="vyc-arr">
+                <svg width="24" height="96" viewBox="0 0 24 96" fill="none"><path d="M12 92V12" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M5 18l7-10 7 10" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>улучшения<br>в систему</span>
+              </div>
+            </div>
+            <div class="vyc-node vyc-prd">
+              <span class="vyc-t">Продукты</span>
+              <span class="vyc-s">касса · офис · веб · доставка</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1303,6 +1347,22 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
           <div class="row anim" style="--d:.2s"><i class="sq"></i><p>Единый облик продуктов и меньше переделок</p></div>
           <div class="row anim" style="--d:.26s"><i class="sq"></i><p>Прототипы за часы: система + любой ИИ</p></div>
           <div class="row anim" style="--d:.32s"><i class="sq"></i><p>Результат работы дизайнеров - инструмент на всю команду</p></div>
+        </div>
+        <div class="fnrow anim" style="--d:.38s">
+          <div class="fn-node">
+            <span class="fn-n">01</span>
+            <div class="fn-tx"><span class="fn-t">Подключить систему</span><span class="fn-s">одной строкой, без сборки</span></div>
+          </div>
+          <svg class="fn-arr" width="44" height="24" viewBox="0 0 44 24" fill="none"><path d="M2 12H32" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M26 4l10 8-10 8" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="fn-node">
+            <span class="fn-n">02</span>
+            <div class="fn-tx"><span class="fn-t">Собирать по системе</span><span class="fn-s">прототипы за часы, с ИИ</span></div>
+          </div>
+          <svg class="fn-arr" width="44" height="24" viewBox="0 0 44 24" fill="none"><path d="M2 12H32" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M26 4l10 8-10 8" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="fn-node fn-node-acc">
+            <span class="fn-n">03</span>
+            <div class="fn-tx"><span class="fn-t">Продукты быстрее</span><span class="fn-s">единый облик, меньше переделок</span></div>
+          </div>
         </div>
         <div class="callout anim" style="--d:.42s">
           <span class="lab">Просьба</span>
