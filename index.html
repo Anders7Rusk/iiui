@@ -585,10 +585,11 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .c-lead{font-size:24px;color:#A6A6AD;margin:-26px 0 16px;max-width:1560px}
 .tk3{grid-template-columns:repeat(3,1fr)}
 .tk3 .csw{flex-wrap:wrap;gap:14px 44px}
-.szr{display:flex;align-items:flex-end;gap:12px}
-.szi{display:flex;flex-direction:column;align-items:center;gap:6px}
-.szi i{background:#35353C;border-radius:4px;display:block}
-.szi span{font-family:var(--mono);font-size:11px;color:#8E8E96}
+.szr2{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1.5px solid #3A3A42;padding:0 10px}
+.szr2 .tk{flex:1;display:flex;justify-content:center}
+.szr2 .tk i{width:2px;background:#55555E;display:block;border-radius:1px}
+.szn{display:flex;justify-content:space-between;padding:8px 10px 0}
+.szn span{flex:1;text-align:center;font-family:var(--mono);font-size:11px;color:#8E8E96}
 
 .t-link{position:absolute;top:96px;right:120px;display:flex;align-items:center;gap:14px;text-decoration:none;z-index:2}
 .t-link i{width:10px;height:10px;border-radius:50%;background:var(--red);display:block;flex:none}
@@ -874,14 +875,15 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
               </div>
               <div class="tkcard">
                 <div class="tk-lb2"><span>Размеры</span><span class="mono-s">px</span></div>
-                <div class="szr">
-                  <div class="szi"><i style="width:4px;height:4px"></i><span>4</span></div>
-                  <div class="szi"><i style="width:8px;height:8px"></i><span>8</span></div>
-                  <div class="szi"><i style="width:12px;height:12px"></i><span>12</span></div>
-                  <div class="szi"><i style="width:16px;height:16px"></i><span>16</span></div>
-                  <div class="szi"><i style="width:24px;height:24px"></i><span>24</span></div>
-                  <div class="szi"><i style="width:32px;height:32px"></i><span>32</span></div>
+                <div class="szr2">
+                  <div class="tk"><i style="height:5px"></i></div>
+                  <div class="tk"><i style="height:10px"></i></div>
+                  <div class="tk"><i style="height:15px"></i></div>
+                  <div class="tk"><i style="height:20px"></i></div>
+                  <div class="tk"><i style="height:30px"></i></div>
+                  <div class="tk"><i style="height:40px"></i></div>
                 </div>
+                <div class="szn"><span>4</span><span>8</span><span>12</span><span>16</span><span>24</span><span>32</span></div>
               </div>
               <div class="tkcard">
                 <div class="tk-lb2"><span>Отступы</span><span class="mono-s">px</span></div>
