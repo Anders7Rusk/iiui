@@ -597,6 +597,14 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .t-link .tl-url{font-family:var(--mono);font-size:19px;color:#C9C9CF;border-bottom:1.5px solid rgba(255,82,82,.45);padding-bottom:3px;transition:color .2s,border-color .2s}
 .t-link:hover .tl-url{color:#fff;border-color:var(--red)}
 
+/* компактнее: три входа на слайде «Скорость» */
+[data-screen="skorost"] .sflow{margin:2px 0 30px}
+[data-screen="skorost"] .in-group{gap:9px}
+[data-screen="skorost"] .in-chip{padding:13px 26px}
+[data-screen="skorost"] .rows .row{padding:15px 0}
+[data-screen="skorost"] .chip-line{margin-top:26px}
+[data-screen="skorost"] .note{margin-top:16px}
+
 /* ===== HUD ===== */
 .hud{position:absolute;left:120px;right:120px;bottom:42px;display:flex;align-items:center;justify-content:space-between;z-index:5;pointer-events:none}
 .brand{pointer-events:auto;background:none;border:0;color:var(--faint);font:inherit;font-size:19px;letter-spacing:.04em;cursor:pointer;display:flex;align-items:center;gap:14px;padding:0;border-radius:8px}
@@ -1103,7 +1111,9 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <h2 class="anim" style="--d:.06s">Прототип за часы — с помощью ИИ</h2>
         <div class="sflow anim" style="--d:.12s">
           <div class="in-group">
-            <div class="in-chip">Макет<span class="s">экран из Figma</span></div>
+            <div class="in-chip">Макет<span class="s">из Figma или другого редактора</span></div>
+            <span class="plus">+</span>
+            <div class="in-chip">Текстовая задача<span class="s">просто описание словами</span></div>
             <span class="plus">+</span>
             <div class="in-chip">Инструкция дизайн-системы<span class="s">одна ссылка</span></div>
           </div>
