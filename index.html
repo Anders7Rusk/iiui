@@ -118,6 +118,10 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .sk-main i:nth-child(1){width:58%}
 .sk-main i:nth-child(2){width:88%}
 .sk-main i:nth-child(3){width:44%}
+.ct{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.cico{width:24px;height:24px;stroke:var(--red);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ct + .cap{margin-top:16px}
+.card.lead{justify-content:center}
 /* repo chips */
 .repos{display:flex;flex-direction:column;gap:8px}
 .repo{border:1px solid var(--hair2);border-radius:9px;padding:9px 12px;display:flex;align-items:center;gap:10px;font-size:17px;font-weight:500}
@@ -360,13 +364,13 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 
       <!-- 05 Что сделано -->
       <section class="slide" data-screen="fakt">
-        <div class="kicker anim"><i class="sq"></i><span>04 · Факты</span></div>
-        <h2 class="anim" style="--d:.06s">Что уже сделано</h2>
+        <div class="kicker anim"><i class="sq"></i><span>04 · Результат</span></div>
+        <h2 class="anim" style="--d:.06s">Система собрана и работает</h2>
         <div class="cards">
-          <div class="card anim" style="--d:.1s"><div class="num">106</div><div class="cap">компонентов описано в системе (Figma)</div></div>
-          <div class="card anim" style="--d:.16s"><div class="num">2000<span class="r">+</span></div><div class="cap">токенов: цвета, шрифты, отступы, тени</div></div>
-          <div class="card anim" style="--d:.22s"><div class="num">37</div><div class="cap">компонентов переведено в код — веб-слой</div></div>
-          <div class="card anim" style="--d:.28s"><div class="num">28</div><div class="cap">компонентов — мобильный слой (планшет и телефон)</div></div>
+          <div class="card lead anim" style="--d:.1s"><div class="ct"><svg class="cico" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>Компоненты</span></div><div class="cap">Все основные элементы интерфейса — с вариантами и состояниями</div></div>
+          <div class="card lead anim" style="--d:.16s"><div class="ct"><svg class="cico" viewBox="0 0 24 24"><circle cx="8.5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="15.5" cy="12" r="2.2"/></svg><span>Токены</span></div><div class="cap">Единые правила цвета, шрифтов, отступов и теней</div></div>
+          <div class="card lead anim" style="--d:.22s"><div class="ct"><svg class="cico" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg><span>Код</span></div><div class="cap">Компоненты живут и в коде — готовы для разработки и ИИ</div></div>
+          <div class="card lead anim" style="--d:.28s"><div class="ct"><svg class="cico" viewBox="0 0 24 24"><rect x="7" y="3.5" width="10" height="17" rx="2"/><path d="M10.5 17.5h3"/></svg><span>Мобильные</span></div><div class="cap">Отдельный мобильный слой: планшет и телефон</div></div>
           <div class="card visual anim" style="--d:.34s">
             <div class="sk">
               <div class="sk-top"><i></i><i></i><i></i><span class="b"></span></div>
@@ -523,19 +527,17 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <div class="linkchip anim" style="--d:.42s"><span class="dim">Начать здесь:</span><span class="acc">github.com/iiko-DS</span><span class="dim">— инструкция «с чего начать»</span></div>
       </section>
 
-      <!-- 12 Цифры -->
-      <section class="slide" data-screen="cifry">
+      <!-- 12 Выводы -->
+      <section class="slide" data-screen="vyvody">
         <div class="kicker anim"><i class="sq"></i><span>11 · Итоги</span></div>
-        <h2 class="anim" style="--d:.06s">Цифры</h2>
-        <div class="stats">
-          <div class="stat anim" style="--d:.1s"><div class="n">106</div><div class="lbl">компонентов в системе</div></div>
-          <div class="stat anim" style="--d:.16s"><div class="n">2000<span class="r">+</span></div><div class="lbl">токенов: цвета, шрифты, отступы, тени</div></div>
-          <div class="stat anim" style="--d:.22s"><div class="n">37</div><div class="lbl">компонентов в веб-коде</div></div>
-          <div class="stat anim" style="--d:.28s"><div class="n">28</div><div class="lbl">компонентов — мобильный слой</div></div>
-          <div class="stat anim" style="--d:.34s"><div class="n">≈10</div><div class="lbl">прототипов экранов уже собрано</div></div>
-          <div class="stat anim" style="--d:.4s"><div class="n mid">37 + 38</div><div class="lbl">задач по ДС в Jira: закрыто + в работе</div></div>
+        <h2 class="anim" style="--d:.06s">Общие выводы</h2>
+        <div class="rows">
+          <div class="row anim" style="--d:.1s"><i class="sq"></i><p>Система построена и живёт — обновляется вместе с продуктами</p></div>
+          <div class="row anim" style="--d:.16s"><i class="sq"></i><p>Продукты развиваются быстрее: базовое не изобретается заново</p></div>
+          <div class="row anim" style="--d:.22s"><i class="sq"></i><p>Прототипы собираются на системе — и всё быстрее, с помощью ИИ</p></div>
+          <div class="row anim" style="--d:.28s"><i class="sq"></i><p>Решения дизайна принимаются один раз — и действуют во всех продуктах</p></div>
+          <div class="row anim" style="--d:.34s"><i class="sq"></i><p>Отдача растёт с каждой командой, которая собирает по системе</p></div>
         </div>
-        <div class="caption anim" style="--d:.46s">За числами — работающая система, встроенная в ежедневную работу</div>
       </section>
 
       <!-- 13 Что дальше -->
@@ -543,7 +545,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <div class="kicker anim"><i class="sq"></i><span>12 · План</span></div>
         <h2 class="anim" style="--d:.06s">Что дальше</h2>
         <div class="road">
-          <div class="row anim" style="--d:.1s"><span class="chip wip">в работе</span><p>Мобильная адаптация: планшет и телефон — 38 задач</p></div>
+          <div class="row anim" style="--d:.1s"><span class="chip wip">в работе</span><p>Мобильная адаптация: планшет и телефон</p></div>
           <div class="row anim" style="--d:.16s"><span class="chip on">постоянно</span><p>Система растёт: новые компоненты и состояния</p></div>
           <div class="row anim" style="--d:.22s"><span class="chip on">план</span><p>Подключаем команды: обучение, рецепты, поддержка</p></div>
           <div class="row anim" style="--d:.28s"><span class="chip goal">цель</span><p>Все интерфейсы iiko собираются по дизайн-системе</p></div>
