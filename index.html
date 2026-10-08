@@ -144,7 +144,11 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .pwin-top{height:38px;background:#17171B;display:flex;align-items:center;gap:8px;padding:0 16px}
 .pwin-top i{width:10px;height:10px;border-radius:50%;background:#2A2A30}
 .pwin-top .url{height:14px;flex:0 0 250px;margin-left:10px;background:#101013;border-radius:7px}
-.pwin-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:14px}
+.pwin-body{display:flex}
+.pwin-side{width:150px;border-right:1px solid var(--hair);background:#111114;padding:16px 14px;display:flex;flex-direction:column;gap:11px;flex:none}
+.pwin-side i{height:11px;border-radius:5px;background:#26262C;display:block}
+.pwin-side i.on{background:rgba(255,82,82,.55)}
+.pwin-main{flex:1;padding:18px 22px;display:flex;flex-direction:column;gap:12px}
 .pwin-body .r{display:flex;gap:10px;align-items:center}
 .pwin-body .rowbar{height:14px;border-radius:7px;background:#202026;flex:1}
 .pwin-body .b-red{height:32px;width:130px;border-radius:8px;background:var(--red);flex:none;margin-left:auto}
@@ -1128,9 +1132,14 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
             <div class="pwin">
               <div class="pwin-top"><i></i><i></i><i></i><span class="url"></span></div>
               <div class="pwin-body">
-                <div class="r"><span class="rowbar" style="max-width:190px"></span><span class="b-red"></span></div>
-                <div class="r"><span class="rowbar"></span></div>
-                <div class="r"><span class="rowbar" style="max-width:62%"></span><span class="b-out"></span></div>
+                <div class="pwin-side"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+                <div class="pwin-main">
+                  <div class="r"><span class="rowbar" style="max-width:190px"></span><span class="b-red"></span></div>
+                  <div class="r"><span class="rowbar"></span></div>
+                  <div class="r"><span class="rowbar" style="max-width:52%"></span><span class="b-out"></span></div>
+                  <div class="r"><span class="rowbar" style="max-width:88%"></span></div>
+                  <div class="r"><span class="rowbar" style="max-width:64%"></span></div>
+                </div>
               </div>
             </div>
             <div class="pwin-cap">Живой прототип — открывается в браузере</div>
