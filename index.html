@@ -400,6 +400,90 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .wrow{display:flex;align-items:center;gap:12px}
 .wbtn{height:28px;padding:0 14px;border-radius:7px;background:var(--red);color:#0A0A0B;font-size:13px;font-weight:500;display:flex;align-items:center;flex:none}
 
+/* ===== v6: слайды-детали ===== */
+.dwrap{display:flex;gap:56px;align-items:stretch;flex:1;min-height:0;margin-top:2px}
+.dvis{flex:1;border:1px solid var(--hair);border-radius:16px;background:var(--panel);display:flex;align-items:center;justify-content:center;padding:36px 40px}
+.dpts{flex:none;width:520px;display:flex;flex-direction:column;justify-content:center;gap:30px}
+.dp{display:flex;gap:20px;align-items:flex-start}
+.dp .sq{margin-top:10px}
+.dp p{font-size:26px;color:#C9C9CF;line-height:1.36}
+/* каталог компонентов */
+.cat{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;width:100%;max-width:1010px}
+.cati{border:1px solid var(--hair2);border-radius:12px;background:#0C0C0F;padding:20px 16px 14px;display:flex;flex-direction:column;align-items:center;gap:16px;min-height:150px;justify-content:center}
+.ct-lb{font-size:15px;color:#8E8E96}
+.ct-sk{height:56px;display:flex;align-items:center;justify-content:center}
+.sk-btn{height:36px;padding:0 18px;border-radius:9px;background:var(--red);color:#0A0A0B;font-size:15px;font-weight:500;display:flex;align-items:center}
+.sk-field{width:132px;height:36px;border:1.5px solid rgba(255,255,255,.25);border-radius:9px;background:var(--panel2);display:flex;align-items:center;padding:0 12px;font-size:14px;color:#A6A6AD}
+.sk-tbl{width:122px;display:flex;flex-direction:column;gap:7px}
+.sk-tbl i{height:8px;border-radius:3px;background:#26262C;display:block}
+.sk-tbl i:first-child{background:rgba(255,82,82,.5)}
+.sk-menu{width:112px;display:flex;flex-direction:column;gap:8px}
+.sk-menu i{height:9px;border-radius:4px;background:#26262C;display:block}
+.sk-menu i:first-child{background:rgba(255,82,82,.55)}
+.sk-dlg{width:132px;height:62px;border:1.5px solid var(--hair2);border-radius:9px;padding:9px 10px;display:flex;flex-direction:column;gap:7px}
+.sk-dlg i{height:7px;border-radius:3px;background:#26262C;display:block}
+.sk-dlg i:first-child{width:55%;background:rgba(255,82,82,.45)}
+.sk-graph{display:flex;align-items:flex-end;gap:7px;height:52px}
+.sk-graph i{width:14px;border-radius:4px 4px 0 0;background:#3A3A42;display:block}
+.sk-graph i:last-child{background:var(--red)}
+.sk-st{height:30px;padding:0 14px;border-radius:999px;border:1px solid var(--red-line);color:var(--red);font-size:14px;display:flex;align-items:center}
+.sk-cal{display:grid;grid-template-columns:repeat(4,11px);gap:6px}
+.sk-cal i{width:11px;height:11px;border-radius:3px;background:#26262C;display:block}
+.sk-cal i.on{background:var(--red)}
+/* токены */
+.tk2{display:flex;flex-direction:column;gap:30px;width:100%}
+.tkrow{display:flex;align-items:center;gap:30px}
+.tk-lb{flex:none;width:220px;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:#6E6E76;font-weight:500}
+.swrow{display:flex;gap:12px}
+.swrow i{width:44px;height:44px;border-radius:10px;display:block;border:1px solid var(--hair2)}
+.tsp{display:flex;align-items:baseline;gap:28px}
+.tsp .t1{font-size:32px;font-weight:700}
+.tsp .t2{font-size:22px;color:#C9C9CF}
+.tsp .t3{font-size:15px;color:#8E8E96}
+.sprow{display:flex;align-items:center;gap:14px}
+.sprow .spb{height:14px;border-radius:7px;background:#3A3A42;display:block}
+.sprow .rad{width:44px;height:44px;background:#202026;border:1.5px solid var(--hair2);display:block;margin-left:10px}
+.sprow .rad.r12{border-radius:12px}
+.sprow .rad.r8{border-radius:8px}
+/* код */
+.kodwrap{display:flex;flex-direction:column;gap:22px;width:100%}
+.kodcard{border:1px solid var(--hair2);border-radius:12px;background:#0C0C0F;padding:20px 24px;display:flex;flex-direction:column;gap:12px}
+.kod-lb{font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#6E6E76;font-weight:500}
+.tree2{font-family:var(--mono);font-size:18px;line-height:1.8;color:#C9C9CF}
+.tree2 .ind{color:#8E8E96;padding-left:24px}
+.mono2{font-family:var(--mono);font-size:16px;color:#C9C9CF;white-space:nowrap;overflow:hidden}
+.mono2 .acc{color:var(--red)}
+/* мобильные */
+.devs{display:flex;gap:64px;align-items:flex-end}
+.dev{display:flex;flex-direction:column;align-items:center;gap:16px}
+.dev-tab{width:350px;height:250px;border:2px solid var(--hair2);border-radius:18px;background:#0C0C0F;overflow:hidden;display:flex;flex-direction:column}
+.dev-top{height:30px;background:#17171B;display:flex;align-items:center;gap:6px;padding:0 14px}
+.dev-top i{width:8px;height:8px;border-radius:50%;background:#2A2A30;display:block}
+.dev-body{padding:16px 18px;display:flex;flex-direction:column;gap:12px;flex:1}
+.dbar{height:10px;border-radius:5px;background:#202026}
+.dbar.w70{width:70%}.dbar.w80{width:80%}.dbar.w60{width:60%}.dbar.w50{width:50%}
+.dchip{border:1px solid var(--red-line);color:var(--red);border-radius:999px;padding:4px 12px;font-size:13px;align-self:flex-start}
+.dbtn{height:34px;width:120px;border-radius:8px;background:var(--red)}
+.dev-ph{width:168px;height:330px;border:2px solid var(--hair2);border-radius:24px;background:#0C0C0F;padding:16px 13px;display:flex;flex-direction:column;gap:12px}
+.dev-ph .dbtn{width:100%;margin-top:auto}
+.dev-cap{font-size:16px;color:#8E8E96}
+/* готовые решения (организмы) */
+.orgs{display:flex;gap:28px;width:100%;align-items:stretch}
+.org{flex:1;border:1px solid var(--hair2);border-radius:12px;background:#0C0C0F;padding:18px 18px 14px;display:flex;flex-direction:column;gap:16px}
+.org .m{flex:1;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.org-cap{font-size:15px;color:#8E8E96;text-align:center}
+/* github */
+.ghwrap{display:flex;flex-direction:column;align-items:center;gap:22px;width:100%}
+.ghtags{display:flex;gap:14px}
+.ghtag{border:1px solid var(--hair2);border-radius:999px;padding:9px 20px;font-size:16px;color:#C9C9CF}
+.ghtag.hot{border-color:var(--red-line);color:var(--red)}
+
+/* ===== титул: блок-посыл справа ===== */
+.t-side{position:absolute;right:120px;bottom:206px;width:640px;display:flex;flex-direction:column;gap:20px}
+.ts-label{font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E96;font-weight:500;margin-bottom:4px}
+.ts-item{display:flex;gap:20px;align-items:flex-start}
+.ts-item .sq{margin-top:9px}
+.ts-item p{font-size:27px;color:#E9E9EC;line-height:1.3}
 /* ===== HUD ===== */
 .hud{position:absolute;left:120px;right:120px;bottom:42px;display:flex;align-items:center;justify-content:space-between;z-index:5;pointer-events:none}
 .brand{pointer-events:auto;background:none;border:0;color:var(--faint);font:inherit;font-size:19px;letter-spacing:.04em;cursor:pointer;display:flex;align-items:center;gap:14px;padding:0;border-radius:8px}
@@ -453,6 +537,12 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
           <div class="t-rule anim" style="--d:.14s"></div>
           <h1 class="t-title anim" style="--d:.2s">Дизайн-система iiko</h1>
           <p class="t-sub anim" style="--d:.26s">Один язык интерфейсов для всех продуктов iiko</p>
+        </div>
+        <div class="t-side">
+          <div class="ts-label anim" style="--d:.3s">Что даёт дизайн-система</div>
+          <div class="ts-item anim" style="--d:.36s"><i class="sq"></i><p>Единый облик всех продуктов</p></div>
+          <div class="ts-item anim" style="--d:.42s"><i class="sq"></i><p>Прототипы за часы: система + ИИ</p></div>
+          <div class="ts-item anim" style="--d:.48s"><i class="sq"></i><p>Меньше ручной работы и переделок</p></div>
         </div>
       </section>
 
@@ -600,7 +690,196 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
             <div class="cap">витрины, спецификация, инструкции</div>
           </div>
         </div>
-        <div class="caption anim" style="--d:.46s">Это не макеты на полке — система живёт и обновляется</div>
+        <div class="caption anim" style="--d:.46s">Это не макеты на полке — система живёт и обновляется. Дальше — подробнее о каждом блоке</div>
+      </section>
+
+      <!-- 05a Компоненты -->
+      <section class="slide" data-screen="d1-komponenty">
+        <div class="kicker anim"><i class="sq"></i><span>04 · Подробнее</span></div>
+        <h2 class="anim" style="--d:.06s">Компоненты</h2>
+        <div class="dwrap">
+          <div class="dvis anim" style="--d:.14s">
+            <div class="cat">
+              <div class="cati"><span class="ct-sk"><span class="sk-btn">Кнопка</span></span><span class="ct-lb">Кнопка</span></div>
+              <div class="cati"><span class="ct-sk"><span class="sk-field">Касса 1</span></span><span class="ct-lb">Поле ввода</span></div>
+              <div class="cati"><span class="ct-sk"><span class="sk-tbl"><i></i><i></i><i></i></span></span><span class="ct-lb">Таблица</span></div>
+              <div class="cati"><span class="ct-sk"><span class="sk-menu"><i></i><i></i><i></i></span></span><span class="ct-lb">Меню</span></div>
+              <div class="cati"><span class="ct-sk"><span class="sk-dlg"><i></i><i></i></span></span><span class="ct-lb">Диалог</span></div>
+              <div class="cati"><span class="ct-sk"><span class="sk-graph"><i style="height:18px"></i><i style="height:30px"></i><i style="height:42px"></i><i style="height:52px"></i></span></span><span class="ct-lb">График</span></div>
+              <div class="cati"><span class="ct-sk"><span class="sk-st">В продаже</span></span><span class="ct-lb">Статус</span></div>
+              <div class="cati"><span class="ct-sk"><span class="sk-cal"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i></span></span><span class="ct-lb">Календарь</span></div>
+            </div>
+          </div>
+          <div class="dpts">
+            <div class="dp anim" style="--d:.22s"><i class="sq"></i><p>Всё, из чего состоит интерфейс — от кнопки до таблицы</p></div>
+            <div class="dp anim" style="--d:.28s"><i class="sq"></i><p>У каждого элемента — варианты и состояния</p></div>
+            <div class="dp anim" style="--d:.34s"><i class="sq"></i><p>Выглядят и работают одинаково во всех продуктах</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05b Токены -->
+      <section class="slide" data-screen="d2-tokeny">
+        <div class="kicker anim"><i class="sq"></i><span>04 · Подробнее</span></div>
+        <h2 class="anim" style="--d:.06s">Токены</h2>
+        <div class="dwrap">
+          <div class="dvis anim" style="--d:.14s">
+            <div class="tk2">
+              <div class="tkrow"><span class="tk-lb">Цвета</span><div class="swrow"><i style="background:#FF5252"></i><i style="background:#FFFFFF"></i><i style="background:#E0E0E0"></i><i style="background:#9E9E9E"></i><i style="background:#616161"></i><i style="background:#333333"></i></div></div>
+              <div class="tkrow"><span class="tk-lb">Шрифты</span><div class="tsp"><span class="t1">Заголовок</span><span class="t2">Текст</span><span class="t3">Подпись</span></div></div>
+              <div class="tkrow"><span class="tk-lb">Отступы и скругления</span><div class="sprow"><i class="spb" style="width:12px"></i><i class="spb" style="width:22px"></i><i class="spb" style="width:32px"></i><i class="spb" style="width:44px"></i><span class="rad r12"></span><span class="rad r8"></span></div></div>
+            </div>
+          </div>
+          <div class="dpts">
+            <div class="dp anim" style="--d:.22s"><i class="sq"></i><p>Цвета, шрифты, отступы — зафиксированы цифрами</p></div>
+            <div class="dp anim" style="--d:.28s"><i class="sq"></i><p>Поменяли значение — обновилось во всех продуктах</p></div>
+            <div class="dp anim" style="--d:.34s"><i class="sq"></i><p>Никаких «на глаз» и случайных оттенков</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05c Код -->
+      <section class="slide" data-screen="d3-kod">
+        <div class="kicker anim"><i class="sq"></i><span>04 · Подробнее</span></div>
+        <h2 class="anim" style="--d:.06s">Код и библиотека</h2>
+        <div class="dwrap">
+          <div class="dvis anim" style="--d:.14s">
+            <div class="kodwrap">
+              <div class="kodcard">
+                <span class="kod-lb">Библиотека</span>
+                <div class="tree2">
+                  <div>components-web/</div>
+                  <div class="ind">tokens.css · button.css · table.css · form.css …</div>
+                  <div>components-mobile/</div>
+                  <div class="ind">планшет · телефон</div>
+                </div>
+              </div>
+              <div class="kodcard">
+                <span class="kod-lb">Подключение — одна строка</span>
+                <div class="mono2">&lt;script src=<span class="acc">"https://iiko-ds.github.io/DS/connect.js"</span> defer&gt;&lt;/script&gt;</div>
+              </div>
+            </div>
+          </div>
+          <div class="dpts">
+            <div class="dp anim" style="--d:.22s"><i class="sq"></i><p>Каждый компонент — сразу и макет, и код</p></div>
+            <div class="dp anim" style="--d:.28s"><i class="sq"></i><p>Разработка и ИИ берут готовое, а не пересобирают</p></div>
+            <div class="dp anim" style="--d:.34s"><i class="sq"></i><p>Подключение — одной строкой, без установки</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05d Мобильные -->
+      <section class="slide" data-screen="d4-mobilnye">
+        <div class="kicker anim"><i class="sq"></i><span>04 · Подробнее</span></div>
+        <h2 class="anim" style="--d:.06s">Мобильные</h2>
+        <div class="dwrap">
+          <div class="dvis anim" style="--d:.14s">
+            <div class="devs">
+              <div class="dev">
+                <div class="dev-tab">
+                  <div class="dev-top"><i></i><i></i><i></i></div>
+                  <div class="dev-body">
+                    <div class="dbar w70"></div>
+                    <span class="dchip">В продаже</span>
+                    <div class="dbar"></div>
+                    <div class="dbar w50"></div>
+                    <div class="dbtn" style="margin-top:auto"></div>
+                  </div>
+                </div>
+                <span class="dev-cap">Планшет</span>
+              </div>
+              <div class="dev">
+                <div class="dev-ph">
+                  <div class="dbar w80"></div>
+                  <div class="dbar"></div>
+                  <div class="dbar w60"></div>
+                  <div class="dbar w50"></div>
+                  <div class="dbtn"></div>
+                </div>
+                <span class="dev-cap">Телефон</span>
+              </div>
+            </div>
+          </div>
+          <div class="dpts">
+            <div class="dp anim" style="--d:.22s"><i class="sq"></i><p>Мобильный слой: планшет и телефон</p></div>
+            <div class="dp anim" style="--d:.28s"><i class="sq"></i><p>Те же компоненты — адаптированные под размеры</p></div>
+            <div class="dp anim" style="--d:.34s"><i class="sq"></i><p>Экраны собираются из системы — как на десктопе</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05e Готовые решения -->
+      <section class="slide" data-screen="d5-resheniya">
+        <div class="kicker anim"><i class="sq"></i><span>04 · Подробнее</span></div>
+        <h2 class="anim" style="--d:.06s">Готовые решения</h2>
+        <div class="dwrap">
+          <div class="dvis anim" style="--d:.14s">
+            <div class="orgs">
+              <div class="org">
+                <div class="m">
+                  <div class="sk">
+                    <div class="sk-top"><i></i><i></i><i></i><span class="b"></span></div>
+                    <div class="sk-body"><div class="sk-side"><i></i><i></i><i></i><i></i></div><div class="sk-main"><i></i><i></i><i></i></div></div>
+                  </div>
+                </div>
+                <span class="org-cap">Шапка и меню</span>
+              </div>
+              <div class="org">
+                <div class="m">
+                  <div class="ttbl">
+                    <div class="tr h"><span>Название</span><span>Цена</span><span>Статус</span></div>
+                    <div class="tr sel"><span>Маргарита</span><span>490 ₽</span><span class="tst">В продаже</span></div>
+                    <div class="tr"><span>Цезарь</span><span>450 ₽</span><span class="tst off">Стоп-лист</span></div>
+                  </div>
+                </div>
+                <span class="org-cap">Список с таблицей</span>
+              </div>
+              <div class="org">
+                <div class="m">
+                  <div class="c-title">Новый продукт</div>
+                  <div class="fld"><span class="fl">Название</span><span class="fi">Маргарита</span></div>
+                  <div class="fbtns"><span class="fb1">Сохранить</span><span class="fb2">Отмена</span></div>
+                </div>
+                <span class="org-cap">Форма создания</span>
+              </div>
+            </div>
+          </div>
+          <div class="dpts">
+            <div class="dp anim" style="--d:.22s"><i class="sq"></i><p>Не отдельные детали, а целые собранные наборы</p></div>
+            <div class="dp anim" style="--d:.28s"><i class="sq"></i><p>Под каждое приложение, раздел или экран</p></div>
+            <div class="dp anim" style="--d:.34s"><i class="sq"></i><p>В прототипах появляются уже собранными</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05f GitHub -->
+      <section class="slide" data-screen="d6-github">
+        <div class="kicker anim"><i class="sq"></i><span>04 · Подробнее</span></div>
+        <h2 class="anim" style="--d:.06s">GitHub · iiko-DS</h2>
+        <div class="dwrap">
+          <div class="dvis anim" style="--d:.14s">
+            <div class="ghwrap">
+              <div class="ghmock" style="width:560px;align-self:center">
+                <div class="ghm-top"><i></i><i></i><i></i><span class="u">github.com/iiko-DS</span></div>
+                <div class="ghm-body">
+                  <div class="ghm-repo"><span class="d"></span>DS<span class="s">компоненты · веб и мобильные</span></div>
+                  <div class="ghm-repo"><span class="d"></span>Prototypes<span class="s">прототипы · база знаний</span></div>
+                  <div class="ghm-repo hot"><span class="d"></span>«С чего начать»<span class="s">открыть &rarr;</span></div>
+                </div>
+              </div>
+              <div class="ghtags">
+                <span class="ghtag">витрины</span>
+                <span class="ghtag hot">спецификация для ИИ</span>
+                <span class="ghtag">инструкции</span>
+              </div>
+            </div>
+          </div>
+          <div class="dpts">
+            <div class="dp anim" style="--d:.22s"><i class="sq"></i><p>Всё в открытом виде — организация iiko-DS</p></div>
+            <div class="dp anim" style="--d:.28s"><i class="sq"></i><p>Витрины, спецификация, инструкции — в одном месте</p></div>
+            <div class="dp anim" style="--d:.34s"><i class="sq"></i><p>Изменения — через личную ветку и проверку</p></div>
+          </div>
+        </div>
       </section>
 
       <!-- 06 Скорость с ИИ -->
