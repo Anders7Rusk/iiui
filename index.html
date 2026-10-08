@@ -478,12 +478,22 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .ghtag{border:1px solid var(--hair2);border-radius:999px;padding:9px 20px;font-size:16px;color:#C9C9CF}
 .ghtag.hot{border-color:var(--red-line);color:var(--red)}
 
-/* ===== титул: блок-посыл справа ===== */
-.t-side{position:absolute;right:120px;bottom:206px;width:640px;display:flex;flex-direction:column;gap:20px}
-.ts-label{font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E96;font-weight:500;margin-bottom:4px}
-.ts-item{display:flex;gap:20px;align-items:flex-start}
-.ts-item .sq{margin-top:9px}
-.ts-item p{font-size:27px;color:#E9E9EC;line-height:1.3}
+/* ===== титул: схема процесса справа ===== */
+.t-scheme{position:absolute;right:120px;top:330px;width:800px;display:flex;flex-direction:column;gap:16px}
+.ts-flow{display:flex;align-items:center}
+.ts-node{width:240px;height:100px;border:1px solid var(--hair2);border-radius:14px;background:var(--panel);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;flex:none}
+.ts-node .n-t{font-size:24px;font-weight:500;color:#E9E9EC}
+.ts-node .n-s{font-size:15px;color:var(--faint)}
+.ts-node.acc{border-color:var(--red-line);background:var(--red-soft)}
+.ts-node.acc .n-t{color:var(--red)}
+.ts-node.acc .n-s{color:#C9C9CF}
+.ts-arr{width:40px;height:24px;flex:none;display:block}
+.ts-ups{display:flex;justify-content:space-between}
+.ts-upw{width:240px;display:flex;justify-content:center;flex:none}
+.ts-up{width:24px;height:46px;display:block;opacity:.62}
+.ts-base{background:var(--red-soft);border:1px solid var(--red-line);border-radius:16px;padding:26px 30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:140px}
+.ts-base .b-t{font-size:23px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.ts-base .b-s{font-size:17px;color:#C9C9CF}
 .callout .ctxt{display:flex;flex-direction:column;gap:8px;min-width:0}
 .callout .call-sub{font-size:20px;color:#fff;opacity:.72}
 /* ===== HUD ===== */
@@ -540,11 +550,23 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
           <h1 class="t-title anim" style="--d:.2s">Дизайн-система iiko</h1>
           <p class="t-sub anim" style="--d:.26s">Один язык интерфейсов для всех продуктов iiko</p>
         </div>
-        <div class="t-side">
-          <div class="ts-label anim" style="--d:.3s">Что даёт дизайн-система</div>
-          <div class="ts-item anim" style="--d:.36s"><i class="sq"></i><p>Единый облик всех продуктов</p></div>
-          <div class="ts-item anim" style="--d:.42s"><i class="sq"></i><p>Прототипы за часы: система + ИИ</p></div>
-          <div class="ts-item anim" style="--d:.48s"><i class="sq"></i><p>Меньше ручной работы и переделок</p></div>
+        <div class="t-scheme">
+          <div class="ts-flow">
+            <div class="ts-node anim" style="--d:.3s"><span class="n-t">Идея</span></div>
+            <svg class="ts-arr anim" style="--d:.34s" viewBox="0 0 40 24" fill="none"><path d="M2 12H28" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M26 4l12 8-12 8" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="ts-node acc anim" style="--d:.38s"><span class="n-t">Прототип</span><span class="n-s">за часы, с ИИ</span></div>
+            <svg class="ts-arr anim" style="--d:.42s" viewBox="0 0 40 24" fill="none"><path d="M2 12H28" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M26 4l12 8-12 8" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="ts-node anim" style="--d:.46s"><span class="n-t">Продукт</span></div>
+          </div>
+          <div class="ts-ups">
+            <div class="ts-upw"><svg class="ts-up anim" style="--d:.5s" viewBox="0 0 24 46" fill="none"><path d="M12 44V8" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M5 15l7-7 7 7" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="ts-upw"><svg class="ts-up anim" style="--d:.54s" viewBox="0 0 24 46" fill="none"><path d="M12 44V8" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M5 15l7-7 7 7" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="ts-upw"><svg class="ts-up anim" style="--d:.58s" viewBox="0 0 24 46" fill="none"><path d="M12 44V8" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/><path d="M5 15l7-7 7 7" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="ts-base anim" style="--d:.62s">
+            <span class="b-t">Дизайн-система</span>
+            <span class="b-s">компоненты · токены · правила</span>
+          </div>
         </div>
       </section>
 
