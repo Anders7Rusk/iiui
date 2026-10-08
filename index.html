@@ -552,6 +552,30 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .wside i:first-child{background:rgba(255,82,82,.55)}
 .wmain{flex:1;padding:16px;display:flex;flex-direction:column;gap:12px}
 .wmain .dbtn{width:130px}
+/* ===== v11: готовые решения крупнее ===== */
+.orgs{gap:30px}
+.org{padding:24px 24px 18px;gap:20px}
+.org .m{gap:14px}
+.org-cap{font-size:17px}
+.orgs .sk-top{height:34px;padding:0 14px}
+.orgs .sk-top i{width:10px;height:10px}
+.orgs .sk-top .b{width:150px;height:10px}
+.orgs .sk-body{height:150px}
+.orgs .sk-side{width:124px;padding:14px;gap:11px}
+.orgs .sk-side i{height:10px;border-radius:4px}
+.orgs .sk-main{padding:14px 16px;gap:12px}
+.orgs .sk-main i{height:11px;border-radius:5px}
+.orgs .sk-bbtn{display:block;margin-top:auto;width:96px;height:26px;border-radius:7px;background:var(--red)}
+.orgs .ttbl{font-size:17px}
+.orgs .ttbl .tr{padding:12px 8px;gap:14px}
+.orgs .ttbl .tr.h{font-size:12px}
+.orgs .tst{padding:3px 12px;font-size:13px}
+.orgs .c-title{font-size:21px;font-weight:500;color:#fff}
+.orgs .fld .fl{font-size:14px}
+.orgs .fld .fi{height:40px;font-size:16px}
+.orgs .fbtns{margin-top:8px;gap:12px}
+.orgs .fb1,.orgs .fb2{height:40px;padding:0 18px;font-size:15px}
+
 /* ===== HUD ===== */
 .hud{position:absolute;left:120px;right:120px;bottom:42px;display:flex;align-items:center;justify-content:space-between;z-index:5;pointer-events:none}
 .brand{pointer-events:auto;background:none;border:0;color:var(--faint);font:inherit;font-size:19px;letter-spacing:.04em;cursor:pointer;display:flex;align-items:center;gap:14px;padding:0;border-radius:8px}
@@ -967,7 +991,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
                 <div class="m">
                   <div class="sk">
                     <div class="sk-top"><i></i><i></i><i></i><span class="b"></span></div>
-                    <div class="sk-body"><div class="sk-side"><i></i><i></i><i></i><i></i></div><div class="sk-main"><i></i><i></i><i></i></div></div>
+                    <div class="sk-body"><div class="sk-side"><i></i><i></i><i></i><i></i></div><div class="sk-main"><i></i><i></i><i></i><span class="sk-bbtn"></span></div></div>
                   </div>
                 </div>
                 <span class="org-cap">Шапка и меню</span>
@@ -978,6 +1002,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
                     <div class="tr h"><span>Название</span><span>Цена</span><span>Статус</span></div>
                     <div class="tr sel"><span>Маргарита</span><span>490 ₽</span><span class="tst">В продаже</span></div>
                     <div class="tr"><span>Цезарь</span><span>450 ₽</span><span class="tst off">Стоп-лист</span></div>
+                    <div class="tr"><span>Лимонад</span><span>180 ₽</span><span class="tst">В продаже</span></div>
                   </div>
                 </div>
                 <span class="org-cap">Список с таблицей</span>
@@ -986,6 +1011,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
                 <div class="m">
                   <div class="c-title">Новый продукт</div>
                   <div class="fld"><span class="fl">Название</span><span class="fi">Маргарита</span></div>
+                <div class="fld"><span class="fl">Цена, ₽</span><span class="fi">490</span></div>
                   <div class="fbtns"><span class="fb1">Сохранить</span><span class="fb2">Отмена</span></div>
                 </div>
                 <span class="org-cap">Форма создания</span>
