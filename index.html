@@ -590,6 +590,12 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .szi i{background:#35353C;border-radius:4px;display:block}
 .szi span{font-family:var(--mono);font-size:11px;color:#8E8E96}
 
+.t-link{position:absolute;top:96px;right:120px;display:flex;align-items:center;gap:14px;text-decoration:none;z-index:2}
+.t-link i{width:10px;height:10px;border-radius:50%;background:var(--red);display:block;flex:none}
+.t-link .tl-cap{font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:#6E6E76;font-weight:500}
+.t-link .tl-url{font-family:var(--mono);font-size:19px;color:#C9C9CF;border-bottom:1.5px solid rgba(255,82,82,.45);padding-bottom:3px;transition:color .2s,border-color .2s}
+.t-link:hover .tl-url{color:#fff;border-color:var(--red)}
+
 /* ===== HUD ===== */
 .hud{position:absolute;left:120px;right:120px;bottom:42px;display:flex;align-items:center;justify-content:space-between;z-index:5;pointer-events:none}
 .brand{pointer-events:auto;background:none;border:0;color:var(--faint);font:inherit;font-size:19px;letter-spacing:.04em;cursor:pointer;display:flex;align-items:center;gap:14px;padding:0;border-radius:8px}
@@ -638,6 +644,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
       <!-- 01 Титул -->
       <section class="slide" data-screen="titul">
         <div class="t-brand anim">iiko · design system</div>
+        <a class="t-link anim" style="--d:.12s" href="https://anders7rusk.github.io/iiui/" target="_blank" rel="noopener"><i></i><span class="tl-cap">публичная ссылка</span><span class="tl-url">anders7rusk.github.io/iiui</span></a>
         <div class="t-inner">
           <div class="t-mark anim" style="--d:.05s"><span class="ii">ii</span><span class="ui">ui</span></div>
           <div class="t-rule anim" style="--d:.14s"></div>
@@ -1340,7 +1347,6 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
     home.disabled = (i === 0);
     if (persist !== false) {
       try { localStorage.setItem(KEY, String(i)); } catch (e) {}
-      try { history.replaceState(null, '', '#s' + (i + 1)); } catch (e) {}
     }
   }
 
@@ -1385,10 +1391,6 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
   try {
     var m = location.hash.match(/^#s(\d+)$/);
     if (m) { start = parseInt(m[1], 10) - 1; }
-    else {
-      var v = parseInt(localStorage.getItem(KEY), 10);
-      if (!isNaN(v)) start = v;
-    }
   } catch (e) {}
   if (start < 0 || start > N - 1) start = 0;
   show(start);
