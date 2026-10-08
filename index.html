@@ -460,7 +460,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .mono2{font-family:var(--mono);font-size:16px;color:#C9C9CF;white-space:nowrap;overflow:hidden}
 .mono2 .acc{color:var(--red)}
 /* мобильные */
-.devs{display:flex;gap:64px;align-items:flex-end}
+.devs{display:flex;gap:34px;align-items:flex-end}
 .dev{display:flex;flex-direction:column;align-items:center;gap:16px}
 .dev-tab{width:350px;height:250px;border:2px solid var(--hair2);border-radius:18px;background:#0C0C0F;overflow:hidden;display:flex;flex-direction:column}
 .dev-top{height:30px;background:#17171B;display:flex;align-items:center;gap:6px;padding:0 14px}
@@ -544,6 +544,14 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .specrow span{color:#C9C9CF}
 .note2{font-size:13px;color:#6E6E76}
 
+/* ===== веб-мок на слайде сред ===== */
+.dev-web{width:400px;height:270px;border:2px solid var(--hair2);border-radius:16px;background:#0C0C0F;overflow:hidden;display:flex;flex-direction:column}
+.dev-bodyw{flex:1;display:flex}
+.wside{width:92px;border-right:1px solid var(--hair);background:#111114;padding:14px 12px;display:flex;flex-direction:column;gap:9px}
+.wside i{height:9px;border-radius:4px;background:#26262C;display:block}
+.wside i:first-child{background:rgba(255,82,82,.55)}
+.wmain{flex:1;padding:16px;display:flex;flex-direction:column;gap:12px}
+.wmain .dbtn{width:130px}
 /* ===== HUD ===== */
 .hud{position:absolute;left:120px;right:120px;bottom:42px;display:flex;align-items:center;justify-content:space-between;z-index:5;pointer-events:none}
 .brand{pointer-events:auto;background:none;border:0;color:var(--faint);font:inherit;font-size:19px;letter-spacing:.04em;cursor:pointer;display:flex;align-items:center;gap:14px;padding:0;border-radius:8px}
@@ -747,7 +755,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
           <div class="card lead anim" style="--d:.1s"><div class="vbox"><div class="mcg"><i class="hl" style="grid-column:span 2"></i><i></i><i></i><i></i><i></i><i class="hl" style="grid-column:span 2"></i></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>Компоненты</span></div><div class="cap">Все основные элементы интерфейса — с вариантами и состояниями</div></div>
           <div class="card lead anim" style="--d:.16s"><div class="vbox"><div class="swg"><i style="background:#FF5252"></i><i style="background:#FFFFFF"></i><i style="background:#A6A6AD"></i><i style="background:#616161"></i><i style="background:#333333"></i></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><circle cx="8.5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="15.5" cy="12" r="2.2"/></svg><span>Токены</span></div><div class="cap">Единые правила цвета, шрифтов, отступов и теней</div></div>
           <div class="card lead anim" style="--d:.22s"><div class="vbox"><div class="codebox"><div class="c1">ds-button.css</div><div class="c2">.ds-btn {</div><div class="c3">&#160;&#160;background: #FF5252;</div></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg><span>Код</span></div><div class="cap">Компоненты живут и в коде — готовы для разработки и ИИ</div></div>
-          <div class="card lead anim" style="--d:.28s"><div class="vbox"><div class="pmob"><i></i><i></i><i></i><i></i></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><rect x="7" y="3.5" width="10" height="17" rx="2"/><path d="M10.5 17.5h3"/></svg><span>Мобильные</span></div><div class="cap">Отдельный мобильный слой: планшет и телефон</div></div>
+          <div class="card lead anim" style="--d:.28s"><div class="vbox"><div class="pmob"><i></i><i></i><i></i><i></i></div></div><div class="ct"><svg class="cico" viewBox="0 0 24 24"><rect x="7" y="3.5" width="10" height="17" rx="2"/><path d="M10.5 17.5h3"/></svg><span>Мобильные</span></div><div class="cap">Отдельный мобильный слой: планшет и смартфон</div></div>
           <div class="card visual anim" style="--d:.34s">
             <div class="sk">
               <div class="sk-top"><i></i><i></i><i></i><span class="b"></span></div>
@@ -858,7 +866,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
               <div class="tkcard wide">
                 <div class="tk-lb2"><span>Библиотека</span><span class="mono-s">github.com/iiko-DS/DS</span></div>
                 <div class="filetree"><span class="fdim">├─ </span>components-web/     <span class="fdim">— кнопки, поля, таблицы, меню, диалоги</span>
-<span class="fdim">├─ </span>components-mobile/  <span class="fdim">— те же детали для планшета и телефона</span>
+<span class="fdim">├─ </span>components-mobile/  <span class="fdim">— те же детали для планшета и смартфона</span>
 <span class="fdim">├─ </span>organisms/          <span class="fdim">— готовые блоки: шапка · меню · панель</span>
 <span class="fdim">├─ </span>tokens.css          <span class="fdim">— все значения из Figma</span>
 <span class="fdim">└─ </span><span class="facc">connect.js</span>          <span class="fdim">— подключение одной строкой</span></div>
@@ -896,10 +904,25 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
       <!-- 05d Мобильные -->
       <section class="slide" data-screen="d4-mobilnye">
         <div class="kicker anim"><i class="sq"></i><span>04 · Подробнее</span></div>
-        <h2 class="anim" style="--d:.06s">Мобильные</h2>
+        <h2 class="anim" style="--d:.06s">Веб, планшет, смартфон</h2>
         <div class="dwrap">
           <div class="dvis anim" style="--d:.14s">
             <div class="devs">
+              <div class="dev">
+                <div class="dev-web">
+                  <div class="dev-top"><i></i><i></i><i></i></div>
+                  <div class="dev-bodyw">
+                    <div class="wside"><i></i><i></i><i></i><i></i></div>
+                    <div class="wmain">
+                      <div class="dbar w70"></div>
+                      <div class="dbar"></div>
+                      <div class="dbar w50"></div>
+                      <div class="dbtn" style="margin-top:auto"></div>
+                    </div>
+                  </div>
+                </div>
+                <span class="dev-cap">Веб</span>
+              </div>
               <div class="dev">
                 <div class="dev-tab">
                   <div class="dev-top"><i></i><i></i><i></i></div>
@@ -921,14 +944,14 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
                   <div class="dbar w50"></div>
                   <div class="dbtn"></div>
                 </div>
-                <span class="dev-cap">Телефон</span>
+                <span class="dev-cap">Смартфон</span>
               </div>
             </div>
           </div>
           <div class="dpts">
-            <div class="dp anim" style="--d:.22s"><i class="sq"></i><p>Мобильный слой: планшет и телефон</p></div>
-            <div class="dp anim" style="--d:.28s"><i class="sq"></i><p>Те же компоненты — адаптированные под размеры</p></div>
-            <div class="dp anim" style="--d:.34s"><i class="sq"></i><p>Экраны собираются из системы — как на десктопе</p></div>
+            <div class="dp anim" style="--d:.22s"><i class="sq"></i><p>Три среды — одна система</p></div>
+            <div class="dp anim" style="--d:.28s"><i class="sq"></i><p>Те же компоненты — адаптированные под каждый экран</p></div>
+            <div class="dp anim" style="--d:.34s"><i class="sq"></i><p>Экраны собираются из системы — на любом устройстве</p></div>
           </div>
         </div>
       </section>
@@ -1185,7 +1208,7 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <div class="kicker anim"><i class="sq"></i><span>12 · План</span></div>
         <h2 class="anim" style="--d:.06s">Что дальше</h2>
         <div class="road">
-          <div class="row anim" style="--d:.1s"><span class="chip wip">в работе</span><p>Мобильная адаптация: планшет и телефон</p></div>
+          <div class="row anim" style="--d:.1s"><span class="chip wip">в работе</span><p>Мобильная адаптация: планшет и смартфон</p></div>
           <div class="row anim" style="--d:.16s"><span class="chip on">постоянно</span><p>Система растёт: новые компоненты и состояния</p></div>
           <div class="row anim" style="--d:.22s"><span class="chip on">план</span><p>Подключаем команды: обучение, рецепты, поддержка</p></div>
           <div class="row anim" style="--d:.28s"><span class="chip goal">цель</span><p>Все интерфейсы iiko собираются по дизайн-системе</p></div>
