@@ -294,19 +294,25 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .pmob i{height:7px;border-radius:3px;background:#202026;display:block}
 .pmob i:first-child{background:rgba(255,82,82,.55)}
 /* слайд 7: пиктограммы */
-.col3 .pict{height:112px;border:1px solid var(--hair);border-radius:14px;background:var(--panel);margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:14px;padding:14px}
-.pcg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:150px}
-.pcg i{height:26px;border-radius:6px;background:#202026;display:block}
+.col3 .pict{height:200px;border:1px solid var(--hair);border-radius:14px;background:var(--panel);margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:18px;padding:14px}
+.pcg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:216px}
+.pcg i{height:40px;border-radius:8px;background:#202026;display:block}
 .pcg i.hl{background:rgba(255,82,82,.75)}
-.pdoc{width:56px;height:72px;border:1.5px solid var(--hair2);border-radius:8px;padding:10px 9px;display:flex;flex-direction:column;gap:7px;flex:none}
-.pdoc i{height:6px;border-radius:3px;background:#26262C;display:block}
+.pdoc{width:92px;height:124px;border:1.5px solid var(--hair2);border-radius:10px;padding:16px 14px;display:flex;flex-direction:column;gap:11px;flex:none}
+.pdoc i{height:9px;border-radius:4px;background:#26262C;display:block}
+.pdoc i:nth-child(2){width:92%}
+.pdoc i:nth-child(3){width:78%}
+.pdoc i:nth-child(4){width:96%}
+.pdoc i:nth-child(5){width:64%}
 .pdoc i:first-child{background:rgba(255,82,82,.55);width:70%}
-.pspark{width:30px;height:30px;flex:none}
-.pwin-m{width:120px;height:82px;border:1.5px solid var(--hair2);border-radius:10px;background:#0C0C0F;padding:10px;display:flex;flex-direction:column;gap:8px;position:relative;flex:none}
-.pwin-m i{height:8px;border-radius:4px;background:#202026;display:block}
+.pspark{width:40px;height:40px;flex:none}
+.pwin-m{width:170px;height:118px;border:1.5px solid var(--hair2);border-radius:10px;background:#0C0C0F;padding:16px 14px;display:flex;flex-direction:column;gap:11px;position:relative;flex:none}
+.pwin-m i{height:11px;border-radius:5px;background:#202026;display:block}
+.pwin-m i:nth-child(3){width:72%}
+.pwin-m i:nth-child(4){width:90%}
 .pwin-m i:first-child{width:55%}
 .pwin-m i:nth-child(2){width:85%}
-.pcheck{position:absolute;right:-10px;bottom:-10px;width:30px;height:30px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;color:#0A0A0B;font-size:16px;font-weight:700}
+.pcheck{position:absolute;right:-13px;bottom:-13px;width:42px;height:42px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;color:#0A0A0B;font-size:22px;font-weight:700}
 /* слайд 8: полосы времени */
 .tbar{height:14px;border-radius:7px;margin-top:16px}
 .cmp.now .tbar{width:100%;background:#3A3A42}
@@ -1162,19 +1168,19 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <div class="statement anim" style="--d:.08s;margin-top:26px">ИИ не выдумывает &mdash; он собирает <span class="acc">из системы</span></div>
         <div class="cols3">
           <div class="col3 anim" style="--d:.2s">
-            <div class="pict"><div class="pcg"><i></i><i class="hl"></i><i></i><i></i><i></i><i class="hl"></i></div></div>
+            <div class="pict"><div class="pcg"><i></i><i class="hl"></i><i></i><i></i><i></i><i class="hl"></i><i class="hl"></i><i></i><i></i></div></div>
             <div class="idx">01</div>
             <h4>Всё описано</h4>
             <p>Компоненты, варианты, состояния и правила — в одном месте</p>
           </div>
           <div class="col3 anim" style="--d:.26s">
-            <div class="pict"><div class="pdoc"><i></i><i></i><i></i></div><svg class="pspark" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" stroke="#FF5252" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+            <div class="pict"><div class="pdoc"><i></i><i></i><i></i><i></i><i></i></div><svg class="pspark" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" stroke="#FF5252" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
             <div class="idx">02</div>
             <h4>Спецификация для ИИ</h4>
             <p>Написана так, чтобы её читал любой ассистент — без доработок</p>
           </div>
           <div class="col3 anim" style="--d:.32s">
-            <div class="pict"><div class="pwin-m"><i></i><i></i><i></i><div class="pcheck">✓</div></div></div>
+            <div class="pict"><div class="pwin-m"><i></i><i></i><i></i><i></i><div class="pcheck">✓</div></div></div>
             <div class="idx">03</div>
             <h4>Предсказуемо</h4>
             <p>Прототип выглядит как продукт, а не «как получилось»</p>
