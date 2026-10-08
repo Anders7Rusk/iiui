@@ -366,6 +366,17 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
 .ghm-repo .s{color:var(--faint);font-size:14px;margin-left:auto}
 .ghm-repo.hot{border-color:var(--red-line)}
 .ghm-repo.hot .d{background:var(--red)}
+.gh-tx{display:flex;flex-direction:column;gap:3px}
+.gh-tx b{font-size:19px;font-weight:500;color:#E9E9EC}
+.gh-tx .gh-sub{font-size:14px;color:#8A8A93}
+.gh-prev{margin-left:auto;display:flex;gap:9px;align-items:center;flex:none}
+.gh-prev i{display:block;border:1.5px solid rgba(255,255,255,.22);border-radius:6px}
+.gh-prev-cmp i{width:40px;height:28px}
+.gh-prev-cmp i:nth-child(2){border-color:var(--red);background:var(--red-soft)}
+.gh-prev-prt i{width:30px;height:36px}
+.gh-prev-prt i:nth-child(3){background:#26262C}
+.gh-go{margin-left:auto;font-size:17px;color:var(--red);font-weight:500;flex:none}
+.ghmock-xl .ghm-repo{padding:16px 18px}
 .ghm-repo.hot .s{color:var(--red)}
 /* слайд 14: знак в плашке */
 .callout .cm{margin-left:auto;font-size:44px;font-weight:900;letter-spacing:-.03em;flex:none;line-height:.8}
@@ -1117,12 +1128,12 @@ section[data-screen="titul"]{background-image:radial-gradient(920px 920px at cal
         <div class="dwrap">
           <div class="dvis anim" style="--d:.14s">
             <div class="ghwrap">
-              <div class="ghmock" style="width:560px;align-self:center">
+              <div class="ghmock ghmock-xl" style="width:900px;align-self:center">
                 <div class="ghm-top"><i></i><i></i><i></i><span class="u">github.com/iiko-DS</span></div>
                 <div class="ghm-body">
-                  <div class="ghm-repo"><span class="d"></span>DS<span class="s">компоненты · веб и мобильные</span></div>
-                  <div class="ghm-repo"><span class="d"></span>Prototypes<span class="s">прототипы · база знаний</span></div>
-                  <div class="ghm-repo hot"><span class="d"></span>«С чего начать»<span class="s">открыть &rarr;</span></div>
+                  <div class="ghm-repo"><span class="d"></span><div class="gh-tx"><b>DS</b><span class="gh-sub">компоненты · веб и мобильные</span></div><span class="gh-prev gh-prev-cmp"><i></i><i></i><i></i><i></i></span></div>
+                  <div class="ghm-repo"><span class="d"></span><div class="gh-tx"><b>Prototypes</b><span class="gh-sub">прототипы · база знаний</span></div><span class="gh-prev gh-prev-prt"><i></i><i></i><i></i></span></div>
+                  <div class="ghm-repo hot"><span class="d"></span><div class="gh-tx"><b>«С чего начать»</b></div><span class="gh-go">открыть &rarr;</span></div>
                 </div>
               </div>
               <div class="ghtags">
